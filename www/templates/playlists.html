@@ -1,0 +1,9 @@
+<ion-view view-title="Playlists">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="issue in issues track by $index" href="#/app/playlists/{{issue.index}}" ng-click="setItem(issue)">
+        {{issue.artist}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
