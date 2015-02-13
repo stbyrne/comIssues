@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 
+$hmhorange:                       #fac42e !default;
 
-.bar .bar-header{
-    background: $hmhorange;   
-}
+
+@import "ionic/ionic";
