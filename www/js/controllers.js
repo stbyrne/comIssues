@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
  return{
     getIssues : function() {
         return $http({
-            url: 'content/articles.json',
+            url: 'content/issues.json',
             method: 'GET'
         })
     }
@@ -45,26 +45,50 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', ['$scope', '$http', 'issueFactory', function($scope, $http, issueFactory) {
+.controller('IssuesListCtrl', ['$scope', '$http', 'issueFactory', function($scope, $http, issueFactory) {
     
     $scope.issues = [];
-    $scope.index = null;
+    $scope.item = {};
     
     issueFactory.getIssues().success(function(data){
         $scope.issues = data;
-        console.log($scope.issues);
+        
     });
     $scope.setItem = function(item){
-        $scope.item = item;
-        $scope.$parent.index = item.index;
-        
-            console.log($scope.index);
+        $scope.$parent.item = item;
+       
     }
-    $scope.getIndex = function(){
-        return $scope.$parent.index - 1;
+    $scope.getItem = function(){
+        return $scope.$parent.item;
     }
+   
     
 }])
+.controller('TeamCtrl', ['$scope', '$ionicSlideBoxDelegate', '$timeout', '$http',
+  function ($scope, $ionicSlideBoxDelegate, $timeout, $http) {
+      
+      $http.get('content/team.json').success(function(data) {
+            $scope.team = data;
+        })
+      $timeout(function(){
+          $ionicSlideBoxDelegate.update();
+          /*$ionicSlideBoxDelegate.next();*/
+      }, 500);
+      console.log($scope.team);
+  }])
+/*.controller('TeamCtrl', ['$scope', '$ionicSlideBoxDelegate', '$timeout', '$http', 
+                         function($scope, $http, $timeout, $ionicSlideBoxDelegate){
+       
+    $http.get('content/team.json').success(function(data){
+               $scope.team = data;
+           console.log(data);
+       });
+    $timeout(function(){
+          $ionicSlideBoxDelegate.update();
+          $ionicSlideBoxDelegate.next();
+      }, 500);
+                             
+    }])*/
 
 /*.controller('PlaylistCtrl', ['$scope', '$stateParams', 'issueFactory', function($scope, $stateParams) {
     $scope.issues = [];

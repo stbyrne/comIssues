@@ -1,0 +1,27 @@
+<ion-view view-title="Meet the Team">
+    <ion-slide-box show-pager="false" on-slide-changed="nextSlide()">
+            <ion-slide ng-repeat="member in team" active="true" scrollbar-y="false" id="{{member.id}}">
+    <ion-content>
+        
+        <div >
+            <div class="item item-avatar">
+                <img src={{member.avatar}}>
+                <h2>{{member.name}}, {{member.role}}</h2>
+                <p>{{member.start}}</p>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" src={{member.image}}>
+                <p>
+                    {{member.duties}}
+                </p>
+                <p>
+                    <a href="#" class="subdued">1 Like</a>
+                    <a href="#" class="subdued">5 Comments</a>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+        </ion-slide>
+        </ion-slide-box>
+</ion-view>

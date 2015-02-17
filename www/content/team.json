@@ -1,0 +1,226 @@
+[
+    {
+        "id": "kenbrogan",
+        "index": 1,
+        "name": "Ken Brogan",
+        "role": "Manager",
+        "start": "March 2009",
+        "duties": "Ken ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh in sapien vulputate lacinia nec eget tortor. Integer tristique mauris nisi, vel sagittis lacus pharetra sit amet. Fusce in purus rhoncus, euismod lorem non, tincidunt nunc. Donec sit amet pharetra est, et fringilla est. Nullam a ipsum non augue venenatis imperdiet. Duis nec molestie massa. Quisque non porttitor nisi, ut viverra mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec dapibus scelerisque scelerisque. Nullam aliquam varius felis ut commodo. Mauris sagittis mi quis arcu mattis dapibus in at ligula. Proin luctus leo neque, sed ultricies neque fringilla vitae. Suspendisse sit amet dui quis metus gravida condimentum. Sed mi ante, pretium id mattis et, gravida vel leo. Aliquam erat volutpat. Morbi faucibus turpis eu rutrum vulputate. Donec in pharetra tellus, sit amet mollis mi. Vestibulum sollicitudin nunc at enim accumsan, nec consectetur diam dignissim. Proin id ante suscipit, faucibus elit sit amet, hendrerit libero. Nam vestibulum, turpis non faucibus venenatis, nunc nisl ultrices lectus, in porta lorem sem eu diam. Cras ut dolor eget odio elementum adipiscing. Praesent eget neque scelerisque, mattis metus nec, commodo nibh. Nunc fringilla quis erat non iaculis. Integer semper scelerisque orci, ut sodales risus. Sed eu feugiat magna. Quisque imperdiet a augue in posuere. Sed gravida turpis dui, eu aliquam nisl bibendum in. Sed et ultricies sapien. Curabitur odio ante, malesuada vel molestie nec, pellentesque et ipsum. Integer in venenatis magna. Duis ac lacus lacus. Aenean a porttitor ligula, in fringilla risus. Donec nec urna in risus ultrices volutpat ut id augue. Nulla vitae nunc nec orci fringilla volutpat at id turpis. Aenean ultrices neque id neque pellentesque blandit.",
+        "avatar": "img/male.png",
+        "image" : "img/logo.png",
+        "video": "http://player.vimeo.com/video/90976423",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@weshoolohan"
+    },
+    {
+        "id": "etaoincorcoran",
+        "index": 2,
+        "name": "Etaoin Corcoran",
+        "role": "Project Manager",
+        "start": "July 2012",
+        "duties": "Etaoin Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet iaculis elit, vel vestibulum metus. Cras eleifend pretium massa tristique luctus. Nullam adipiscing, est sed placerat faucibus, erat eros fermentum orci, nec vehicula nunc mi ac tellus. Donec sed augue tortor. Pellentesque vitae ante vel dui faucibus imperdiet. Phasellus nisi magna, pretium et lectus non, tempor condimentum sem. Nulla ac rhoncus leo, vitae ullamcorper dolor. Praesent eget malesuada enim. In auctor at mi eu vehicula. Nulla at condimentum ipsum. Mauris elementum iaculis diam, eget placerat neque venenatis id. Etiam egestas nibh id ligula gravida, et ultricies velit facilisis. Vivamus ac nibh eleifend, dictum purus vitae, dapibus dolor. <br><br>Mauris ut adipiscing erat. Nam congue volutpat interdum. Pellentesque non ullamcorper ipsum. Integer leo urna, convallis at risus a, venenatis sollicitudin libero. Aenean iaculis tortor libero, vitae tempus lacus pharetra at. Vestibulum luctus bibendum leo, pulvinar scelerisque enim cursus aliquam. Nullam vestibulum ipsum non tortor fermentum, sit amet interdum metus hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras eget ante purus. Donec eu ornare tellus. Donec ipsum nulla, tincidunt vitae placerat ac, convallis in sapien. <br><br>Integer tellus neque, ullamcorper nec pellentesque in, venenatis in velit. Ut non nulla non mi pretium rutrum in sed est. Duis ultrices blandit diam eget sollicitudin. Morbi ac vehicula odio. Donec scelerisque ipsum at pretium euismod. Sed et rutrum elit. Proin pellentesque auctor lorem, sit amet sollicitudin lacus vehicula sit amet. Suspendisse pellentesque lacus vitae tortor dapibus bibendum. Mauris commodo a ante eu pretium. <br><br><img src=https://googledrive.com/host/0B0778NZ3pAKKcm9yUk5vaEdTaWc/chrisforrester.1.png /><br><br>In non bibendum eros. Cras a diam a mi ullamcorper commodo. Etiam dictum consequat nunc ut euismod. Aliquam in quam magna. Aenean sed adipiscing ante. Sed iaculis mi sit amet diam aliquet, ac sagittis risus venenatis.",
+        "avatar": "img/female.png",
+        "image" : "img/logo.png",
+        "video": "http://player.vimeo.com/video/39532322",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@chrisforrester"
+    },
+    {
+        "id": "peterogrady",
+        "index": 3,
+        "name": "Peter O'Grady",
+        "role": "Project Manager",
+        "start": "September 2011",
+        "duties": "Peter Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet iaculis elit, vel vestibulum metus. Cras eleifend pretium massa tristique luctus. Nullam adipiscing, est sed placerat faucibus, erat eros fermentum orci, nec vehicula nunc mi ac tellus. Donec sed augue tortor. Pellentesque vitae ante vel dui faucibus imperdiet. Phasellus nisi magna, pretium et lectus non, tempor condimentum sem. Nulla ac rhoncus leo, vitae ullamcorper dolor. Praesent eget malesuada enim. In auctor at mi eu vehicula. Nulla at condimentum ipsum. Mauris elementum iaculis diam, eget placerat neque venenatis id. Etiam egestas nibh id ligula gravida, et ultricies velit facilisis. Vivamus ac nibh eleifend, dictum purus vitae, dapibus dolor. <br><br>Mauris ut adipiscing erat. Nam congue volutpat interdum. Pellentesque non ullamcorper ipsum. Integer leo urna, convallis at risus a, venenatis sollicitudin libero. Aenean iaculis tortor libero, vitae tempus lacus pharetra at. Vestibulum luctus bibendum leo, pulvinar scelerisque enim cursus aliquam. Nullam vestibulum ipsum non tortor fermentum, sit amet interdum metus hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras eget ante purus. Donec eu ornare tellus. Donec ipsum nulla, tincidunt vitae placerat ac, convallis in sapien.",
+        "avatar": "img/male.png",
+        "image" : "img/logo.png",
+        "video": "http://player.vimeo.com/video/37099705",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@fionnualabritton"
+    },
+    {
+        "id": "brianquinn",
+        "index": 4,
+        "name": "Brian Quinn",
+        "role": "Senior Engineer",
+        "start": "August 2011",
+        "duties": "Brian Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet iaculis elit, vel vestibulum metus. Cras eleifend pretium massa tristique luctus. Nullam adipiscing, est sed placerat faucibus, erat eros fermentum orci, nec vehicula nunc mi ac tellus. Donec sed augue tortor. Pellentesque vitae ante vel dui faucibus imperdiet. Phasellus nisi magna, pretium et lectus non, tempor condimentum sem. Nulla ac rhoncus leo, vitae ullamcorper dolor. Praesent eget malesuada enim. In auctor at mi eu vehicula. Nulla at condimentum ipsum. Mauris elementum iaculis diam, eget placerat neque venenatis id. Etiam egestas nibh id ligula gravida, et ultricies velit facilisis. Vivamus ac nibh eleifend, dictum purus vitae, dapibus dolor. <br><br>Mauris ut adipiscing erat. Nam congue volutpat interdum. Pellentesque non ullamcorper ipsum. Integer leo urna, convallis at risus a, venenatis sollicitudin libero. Aenean iaculis tortor libero, vitae tempus lacus pharetra at. Vestibulum luctus bibendum leo, pulvinar scelerisque enim cursus aliquam. Nullam vestibulum ipsum non tortor fermentum, sit amet interdum metus hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras eget ante purus. Donec eu ornare tellus. Donec ipsum nulla, tincidunt vitae placerat ac, convallis in sapien.",
+        "avatar": "img/male.png",
+        "image" : "img/logo.png",
+        "video": "http://player.vimeo.com/video/37099705",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@fionnualabritton"
+    },
+    {
+        "id": "ciarafox",
+        "index": 5,
+        "name": "Ciara Fox",
+        "role": "Senior Engineer",
+        "start": "June 2008",
+        "duties": "Ciara ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet iaculis elit, vel vestibulum metus. Cras eleifend pretium massa tristique luctus. Nullam adipiscing, est sed placerat faucibus, erat eros fermentum orci, nec vehicula nunc mi ac tellus. Donec sed augue tortor. Pellentesque vitae ante vel dui faucibus imperdiet. Phasellus nisi magna, pretium et lectus non, tempor condimentum sem. Nulla ac rhoncus leo, vitae ullamcorper dolor. Praesent eget malesuada enim. In auctor at mi eu vehicula. Nulla at condimentum ipsum. Mauris elementum iaculis diam, eget placerat neque venenatis id. Etiam egestas nibh id ligula gravida, et ultricies velit facilisis. Vivamus ac nibh eleifend, dictum purus vitae, dapibus dolor. <br><br>Mauris ut adipiscing erat. Nam congue volutpat interdum. Pellentesque non ullamcorper ipsum. Integer leo urna, convallis at risus a, venenatis sollicitudin libero. Aenean iaculis tortor libero, vitae tempus lacus pharetra at. Vestibulum luctus bibendum leo, pulvinar scelerisque enim cursus aliquam. Nullam vestibulum ipsum non tortor fermentum, sit amet interdum metus hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras eget ante purus. Donec eu ornare tellus. Donec ipsum nulla, tincidunt vitae placerat ac, convallis in sapien. <br><br>Integer tellus neque, ullamcorper nec pellentesque in, venenatis in velit. Ut non nulla non mi pretium rutrum in sed est. Duis ultrices blandit diam eget sollicitudin. Morbi ac vehicula odio. Donec scelerisque ipsum at pretium euismod. ",
+        "video": "http://player.vimeo.com/video/47361394",
+        "avatar": "img/female.png",
+        "image" : "img/logo.png",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@katie"
+    },
+    {
+        "id": "jennifergriffin",
+        "index": 6,
+        "name": "Jennifer Griffin",
+        "role": "Senior Engineer",
+        "start": "September 2010",
+        "duties": "Jennifer Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet iaculis elit, vel vestibulum metus. Cras eleifend pretium massa tristique luctus. Nullam adipiscing, est sed placerat faucibus, erat eros fermentum orci, nec vehicula nunc mi ac tellus. Donec sed augue tortor. Pellentesque vitae ante vel dui faucibus imperdiet. Phasellus nisi magna, pretium et lectus non, tempor condimentum sem. Nulla ac rhoncus leo, vitae ullamcorper dolor. Praesent eget malesuada enim. In auctor at mi eu vehicula.",
+        "video": "http://player.vimeo.com/video/32073805",
+        "avatar": "img/female.png",
+        "image" : "img/logo.png",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@rorymcilroy"
+    },
+    {
+        "id": "stuartbyrne",
+        "index": 7,
+        "name": "Stuart Byrne",
+        "role": "Engineer",
+        "start": "September 2014",
+        "duties": "Stuart Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet iaculis elit, vel vestibulum metus. Cras eleifend pretium massa tristique luctus. Nullam adipiscing, est sed placerat faucibus, erat eros fermentum orci, nec vehicula nunc mi ac tellus. Donec sed augue tortor. Pellentesque vitae ante vel dui faucibus imperdiet. Phasellus nisi magna, pretium et lectus non, tempor condimentum sem. Nulla ac rhoncus leo, vitae ullamcorper dolor. Praesent eget malesuada enim. In auctor at mi eu vehicula.",
+        "avatar": "img/male.png",
+        "image" : "img/logo.png",
+        "video": "http://player.vimeo.com/video/32073805",
+        "interests": {
+            "trainers": [
+                "adidas",
+                "nike"
+            ],
+            "clothing": [
+                "Armani t-shirt",
+                "H&M slim jeans"
+            ],
+            "smellies": [
+                "Invictus by armani",
+                "Dior Sport by Dior"
+            ],
+            "phone": [
+                "iphone"
+            ],
+            "tablet": [
+                "ipad"
+            ]
+        },
+        "twitter": "@rorymcilroy"
+    }
+]
