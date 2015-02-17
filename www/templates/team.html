@@ -1,9 +1,8 @@
 <ion-view view-title="Meet the Team">
-    <ion-slide-box show-pager="false" on-slide-changed="nextSlide()">
-            <ion-slide ng-repeat="member in team" active="true" scrollbar-y="false" id="{{member.id}}">
+   
     <ion-content>
         
-        <div >
+        <div class="card" ng-repeat="member in team" >
             <div class="item item-avatar">
                 <img src={{member.avatar}}>
                 <h2>{{member.name}}, {{member.role}}</h2>
@@ -22,6 +21,4 @@
             </div>
         </div>
     </ion-content>
-        </ion-slide>
-        </ion-slide-box>
 </ion-view>
