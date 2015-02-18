@@ -49,6 +49,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+  /*.state('app.platforms', {
+      url: "/platforms",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/platforms.html",
+          controller: 'PlatformCtrl'
+        }
+      }
+    })*/
     .state('app.issues', {
       url: "/issues",
       views: {
@@ -57,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'IssuesListCtrl'
         }
       }
-    })
+  })
 
   .state('app.single', {
     url: "/issues/:issue",

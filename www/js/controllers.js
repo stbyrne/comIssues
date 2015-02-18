@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
  return{
     getIssues : function() {
         return $http({
-            url: 'content/issues.json',
+            url: 'content/platform.json',
             method: 'GET'
         })
     }
@@ -47,19 +47,22 @@ angular.module('starter.controllers', [])
 
 .controller('IssuesListCtrl', ['$scope', '$http', 'issueFactory', function($scope, $http, issueFactory) {
     
-    $scope.issues = [];
+    $scope.platforms = [];
     $scope.item = {};
     
     issueFactory.getIssues().success(function(data){
-        $scope.issues = data;
+        $scope.platforms = data;
+    
         
     });
     $scope.setItem = function(item){
         $scope.$parent.item = item;
+        console.log(item);
        
     }
     $scope.getItem = function(){
         return $scope.$parent.item;
+        console.log($scope.$parent.item);
     }
    
     
@@ -70,6 +73,22 @@ angular.module('starter.controllers', [])
             $scope.team = data;
         })  
 })
+/*.controller('PlatformCtrl', function ($scope, $http) {
+    
+    $scope.platform = {};
+      
+      $http.get('content/platform.json').success(function(data) {
+            $scope.platforms = data;
+          console.log(data);
+        })
+      $scope.setPlatform = function(platform){
+        $scope.$parent.platform = platform;
+       
+    }
+    $scope.getPlatform = function(){
+        return $scope.$parent.platform;
+    }
+})*/
 .controller('MapCtrl', function($scope, $ionicLoading, $compile) {
       function initialize() {
         var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
