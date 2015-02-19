@@ -5,10 +5,11 @@
         <div class="card" ng-repeat="member in team" >
             <div class="item item-avatar">
                 <img src={{member.avatar}}>
-                <h2>{{member.name}}, {{member.role}}</h2>
+                <h2>{{member.name}}</h2>
+                <h2 class="subdued">{{member.role}}</h2>
                 <p>{{member.start}}</p>
                 <div class="item-button-right">
-                    <button class="button button-icon ion-grid" ng-click="popover.show($event)"> 
+                    <button class="button button-icon ion-ios7-keypad-outline" ng-click="popover.show($event)"> 
                     </button>
                 </div>
             </div>

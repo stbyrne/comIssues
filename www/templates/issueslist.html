@@ -16,9 +16,11 @@
         <ion-item  class="item-divider item-dark">{{key}}</ion-item>
             <div ng-repeat="issue in issues">
                 <div ng-repeat="(name, process) in issue">
-        <ion-item  class="item-divider item">{{name}}</ion-item>
-      <ion-item ng-repeat="issues in process | filter:searchIssues " href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)">
+        <ion-item  class="item-divider item icon item-icon-left">
+            <i class="icon ion-ios7-gear-outline"></i>{{name}}</ion-item>
+      <ion-item ng-repeat="issues in process | filter:searchIssues " href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="icon item-icon-right">
         {{issues.issue}}
+          <i class="icon ion-ios7-arrow-right"></i>
       </ion-item>
                     </div>
                 </div>
