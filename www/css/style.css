@@ -8,3 +8,6 @@ map {
 .scroll {
   height: 100%;
 }
+.item-text-centre{
+    text-align: center;
+}

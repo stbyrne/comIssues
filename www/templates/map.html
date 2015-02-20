@@ -1,13 +1,16 @@
 <ion-view>
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Map</h1>
-    </ion-header-bar>
-
+    <ion-nav-bar class="bar-energized">
+        <ion-nav-title>Location</ion-nav-title>
+        <ion-nav-buttons >
+            <button class="button button-icon button-clear ion-drag" menu-toggle="left"></button>
+            <div class="item-button-right">
+            <button ng-click="centerOnMe()" class="button button-icon ion-ios7-paperplane"></button>
+            </div>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    
     <ion-content scroll="false">
       <map on-create="mapCreated(map)"></map>
     </ion-content>
-
-    <ion-footer-bar class="bar-dark">
-      <a ng-click="centerOnMe()" class="button button-icon icon ion-ios7-paperplane-outline">Get Location</a>
-    </ion-footer-bar>
+    
 </ion-view>
