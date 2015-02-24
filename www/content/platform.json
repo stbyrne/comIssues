@@ -8,7 +8,7 @@
             "intro": "\"Donec sit amet pharetra est.\"",
             "text": "mds_resources.xlsx goes back to the LA team and the correct component value is updated. This process can take several days to be resolved.",
             "jira": "https://jira.hmhpub.com/browse/CDEV-17286",
-            "imageUrl": "img/pages/backdrop/backdrop_1.jpg",
+            "images": "img/pages/backdrop/backdrop_1.jpg",
             "interests": {
                 "trainers": ["adidas", "nike"],
                 "clothing": ["Armani t-shirt", "H&M slim jeans"],
@@ -25,7 +25,7 @@
             "intro": "\"I only started playing competitive football when I was 16\"",
             "text": "Correlations.xlsx goes back to the LA team and the correct prescription is added to the relevant answer in that test.",
             "jira": "https://jira.hmhpub.com/browse/MFTR-9880",
-            "imageUrl": "img/pages/backdrop/backdrop_2.jpg",
+            "images": "img/pages/backdrop/backdrop_2.jpg",
             "interests": {
                 "trainers": ["adidas", "nike"],
                 "clothing": ["Armani t-shirt", "H&M slim jeans"],
@@ -43,6 +43,7 @@
             "intro": "\"I want that Olympic medal\"",
             "text": "Backend issue resolved by recycling HspSupport_cluster.",
             "jira": "https://jira.hmhpub.com/browse/BF-6150",
+            "images": "img/pages/backdrop/backdrop_2.jpg",
             "interests": {
                 "trainers": ["adidas", "nike"],
                 "clothing": ["Armani t-shirt", "H&M slim jeans"],
@@ -64,7 +65,7 @@
             "intro": "\"All that matters now is getting back to no.1\"",
             "text": "Knowledge_Graph.csv needs to be updated with the effected assignments added and then loaded to adaptive services.",
             "jira": "https://jira.hmhpub.com/browse/MDSTXB-17",
-            "imageUrl": "img/pages/backdrop/backdrop_4.jpg",
+            "images": ["img/screen/1.png", "img/screen/2.png"],
             "interests": {
                 "trainers": ["adidas", "nike"],
                 "clothing": ["Armani t-shirt", "H&M slim jeans"],

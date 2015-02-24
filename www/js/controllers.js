@@ -40,31 +40,50 @@ angular.module('starter.controllers', [])
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
-      $scope.closeLogin();
+      $scope.closeImage();
     }, 1000);
   };
 })
 
-.controller('IssuesListCtrl', ['$scope', '$http', 'issueFactory', function($scope, $http, issueFactory) {
+.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', 'issueFactory', function($scope, $http, $ionicModal, issueFactory) {
     
     $scope.platforms = [];
     $scope.item = {};
-    
+
     issueFactory.getIssues().success(function(data){
         $scope.platforms = data;
-    
-        
+
+
     });
+    
     $scope.setItem = function(item){
         $scope.$parent.item = item;
-        console.log(item);
-       
+        console.log(item.images[0]);
+
     }
     $scope.getItem = function(){
         return $scope.$parent.item;
         console.log($scope.$parent.item);
     }
-   
+// Image Modal
+    
+    // Create the login modal that we will use later
+    $ionicModal.fromTemplateUrl('templates/imageModal.html', {
+    scope: $scope
+    }).then(function(modal) {
+    $scope.modal = modal;
+    });
+
+    // Triggered in the login modal to close it
+    $scope.closeImage = function() {
+    $scope.modal.hide();
+    };
+
+    // Open the login modal
+    $scope.showImage = function() {
+    $scope.modal.show();
+    };
+    
     
 }])
 .controller('TeamCtrl', function ($scope, $http, $ionicPopover) {

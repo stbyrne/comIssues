@@ -1,0 +1,11 @@
+<ion-modal-view>
+    <div class="buttons">
+        <button class="button button-clear" ng-click="closeImage()">Close</button>
+    </div>
+     
+    <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
+        <ion-slide ng-repeat="image in item.images" active="true" scrollbar-y="false">
+            <img ng-src="{{image}}" class="fullscreen-image" /> 
+        </ion-slide>
+    </ion-slide-box>
+</ion-modal-view>

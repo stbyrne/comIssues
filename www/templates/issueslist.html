@@ -16,10 +16,11 @@
         <div ng-repeat="(key, issues) in platforms">
         <ion-item  class="item-divider item-royal item-text-centre">{{key}}</ion-item>
             <div ng-repeat="issue in issues">
-                <div ng-repeat="(name, process) in issue">
+                <div ng-repeat="(name, process) in issue | filter:searchIssues">
         <ion-item  class="item-divider item icon item-icon-left">
             <i class="icon ion-ios7-gear-outline"></i>{{name}}</ion-item>
-      <ion-item ng-repeat="issues in process | filter:searchIssues " href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="icon item-avatar item-icon-right">
+      <ion-item ng-repeat="issues in process | filter:searchIssues" href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
+        <img src={{issues.images[0]}}>
         <h2>{{issues.issue}}</h2>
         <p>{{issues.hint}}</p>
           <i class="icon ion-ios7-arrow-right"></i>
