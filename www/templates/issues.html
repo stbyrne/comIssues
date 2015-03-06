@@ -3,19 +3,32 @@
 <ion-nav-bar class="bar-energized">
   <ion-nav-back-button class="button-icon button-clear ion-ios7-arrow-left">
       </ion-nav-back-button>
+    <div class="buttons">
+            <a href="#/app/main" class="button icon button-icon">Home</a>
+        </div>
 </ion-nav-bar>
 <ion-content ng-init="item = getItem()">
 
         <div class="list card">
 
-          <div class="item">
-            <h2>{{item.issue}}</h2>
+            <ion-item  class="item-divider item-dark item-text-centre">Issue</ion-item>
+            <div class="item">
+                <h2>{{item.issue}}</h2>
+            </div>
+            
+            <ion-item  class="item-divider item-dark item-text-centre">Hint</ion-item>
+            <div class="item">
+            <h2>{{item.hint}}</h2>
           </div>
             
-            <div class="item">
-            <h2>{{item.issue}}</h2>
+            <ion-item  class="item-divider item-dark item-text-centre">Cause</ion-item>
+            <div class="item item-body">
+            <p>
+              {{item.cause}}
+            </p>
           </div>
-
+            
+            <ion-item  class="item-divider item-dark item-text-centre">Detail</ion-item>
           <div class="item item-body">
             <p>
               {{item.text}}
@@ -28,9 +41,9 @@
               Images
             </a>
             
-            <a class="tab-item" href="#">
+            <a class="tab-item" href="{{item.jira}}" target="_blank">
               <i class="icon ion-share"></i>
-              Share
+              Jira
             </a>
           </div>
 

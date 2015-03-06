@@ -40,12 +40,12 @@ angular.module('starter.controllers', [])
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
-      $scope.closeImage();
+      $scope.closeLogin();
     }, 1000);
   };
 })
 
-.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', 'issueFactory', function($scope, $http, $ionicModal, issueFactory) {
+.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicSlideBoxDelegate', 'issueFactory', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, issueFactory) {
     
     $scope.platforms = [];
     $scope.item = {};
@@ -57,13 +57,14 @@ angular.module('starter.controllers', [])
     });
     
     $scope.setItem = function(item){
+        
         $scope.$parent.item = item;
-        console.log(item.images[0]);
-
+        $scope.$parent.images = item.images;
+        
     }
     $scope.getItem = function(){
         return $scope.$parent.item;
-        console.log($scope.$parent.item);
+        console.log('Test');
     }
 // Image Modal
     
@@ -81,9 +82,10 @@ angular.module('starter.controllers', [])
 
     // Open the login modal
     $scope.showImage = function() {
-    $scope.modal.show();
+        $scope.modal.show();
+        /*$ionicSlideBoxDelegate.update();*/
+        console.log($scope.images);
     };
-    
     
 }])
 .controller('TeamCtrl', function ($scope, $http, $ionicPopover) {

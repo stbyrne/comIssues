@@ -32,6 +32,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
+  
+  .state('app.main', {
+    url: "/main",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/main.html",
+        controller: 'AppCtrl'
+      }
+    }
+  })
+  
+  .state('app.contact', {
+    url: "/contact",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/contact.html",
+        controller: 'AppCtrl'
+      }
+    }
+  })
 
   .state('app.map', {
     url: "/map",
@@ -81,5 +101,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/issues');
+  $urlRouterProvider.otherwise('/app/main');
 });
