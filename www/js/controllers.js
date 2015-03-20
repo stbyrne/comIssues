@@ -126,23 +126,9 @@ angular.module('starter.controllers', [])
     // Execute action
   });
 })
-/*.controller('PlatformCtrl', function ($scope, $http) {
-    
-    $scope.platform = {};
-      
-      $http.get('content/platform.json').success(function(data) {
-            $scope.platforms = data;
-          console.log(data);
-        })
-      $scope.setPlatform = function(platform){
-        $scope.$parent.platform = platform;
-       
-    }
-    $scope.getPlatform = function(){
-        return $scope.$parent.platform;
-    }
-})*/
+
 .controller('MapCtrl', function($scope, $ionicLoading) {
+    
   $scope.mapCreated = function(map) {
     $scope.map = map;
   };
@@ -153,12 +139,12 @@ angular.module('starter.controllers', [])
       return;
     }
 
-    $scope.loading = $ionicLoading.show({
+  $scope.loading = $ionicLoading.show({
       content: 'Getting current location...',
       showBackdrop: false
     });
 
-    navigator.geolocation.getCurrentPosition(function (pos) {
+  navigator.geolocation.getCurrentPosition(function (pos) {
       console.log('Got pos', pos);
       $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
       $scope.loading.hide();
@@ -167,3 +153,10 @@ angular.module('starter.controllers', [])
     });
   };
 });
+
+
+
+    
+
+
+    

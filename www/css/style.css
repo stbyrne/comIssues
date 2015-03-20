@@ -20,7 +20,7 @@
     width: 100%;
     position: fixed;
     bottom: 0;
-    border-top: 2px solid green;
+    border-top: 2px solid rgb(60,60,60);
     /*padding: 40px 0;*/
 }
 
@@ -51,6 +51,26 @@
 }
 .contact-list .list .item .item-content:active p{
     color: rgb(40,40,40);
+}
+.contact-list .list .item .item-content{
+    background-color: rgba(60, 60, 60, 0.4);
+    padding: 3% 25% 3% 5%;
+}
+.contact-list .list .item-divider{
+    background-color: rgba(255, 170, 0, 0.5);
+    border: none;
+    padding: 5% 20% 5%;
+    text-align: center;
+}
+.contact-list .list .item-divider h2{
+    color: #fff;
+    font-size: 2em;
+    font-weight: 100;
+}
+.contact-list .list .item-divider p{
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 300;
 }
 .contact-list .list .item .item-content i{
     color: rgb(255,255,255);
