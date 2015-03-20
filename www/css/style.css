@@ -27,6 +27,7 @@
 .contact-list .list .item{
     background-color: transparent;
     border: none;
+    border-top: 2px solid #bbb;
 }
 .contact-list .list .item .item-content{
     background-color: rgba(60, 60, 60, 0.4);
@@ -92,6 +93,27 @@
     -moz-background-size: cover; /* pour Firefox */
     -o-background-size: cover; /* pour Opera */
     background-size: cover; /* version standardisée */
+}
+
+.popover{
+    background-color: rgba(255,255,255, 0.9);
+    border: none;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px 0 15px 15px;
+    
+}
+.teamPopover{
+    background-color: rgba(60, 60, 60, 0.8);
+    border-radius: 0;
+    color: rgb(255, 170, 0);
+    
+}
+.teamPopover .list .item{
+    
+    background-color: none;
+    border: none;
+    
 }
 
 .bar-light{

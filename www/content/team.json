@@ -8,26 +8,12 @@
         "duties": "Ken ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh in sapien vulputate lacinia nec eget tortor. Integer tristique mauris nisi, vel sagittis lacus pharetra sit amet. Fusce in purus rhoncus, euismod lorem non, tincidunt nunc. Donec sit amet pharetra est, et fringilla est. Nullam a ipsum non augue venenatis imperdiet. Duis nec molestie massa. Quisque non porttitor nisi, ut viverra mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec dapibus scelerisque scelerisque. Nullam aliquam varius felis ut commodo.",
         "avatar": "img/logo.png",
         "image" : "img/male.png",
-        "video": "http://player.vimeo.com/video/90976423",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "email": "ken.brogan@hmhco.com",
+        "contact": {
+            "email": "ken.brogan@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "ken.brogan1"
         },
         "twitter": "@weshoolohan"
     },
@@ -41,25 +27,11 @@
         "avatar": "img/logo.png",
         "image" : "img/female.png",
         "video": "http://player.vimeo.com/video/39532322",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "contact": {
+            "email": "ken.brogan@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "ken.brogan1"
         },
         "twitter": "@chrisforrester"
     },
@@ -73,25 +45,11 @@
         "avatar": "img/logo.png",
         "image" : "img/male.png",
         "video": "http://player.vimeo.com/video/37099705",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "contact": {
+            "email": "ken.brogan@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "ken.brogan1"
         },
         "twitter": "@fionnualabritton"
     },
@@ -105,25 +63,11 @@
         "avatar": "img/logo.png",
         "image" : "img/male.png",
         "video": "http://player.vimeo.com/video/37099705",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "contact": {
+            "email": "ken.brogan@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "ken.brogan1"
         },
         "twitter": "@fionnualabritton"
     },
@@ -137,25 +81,11 @@
         "video": "http://player.vimeo.com/video/47361394",
         "avatar": "img/logo.png",
         "image" : "img/female.png",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "contact": {
+            "email": "ken.brogan@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "ken.brogan1"
         },
         "twitter": "@katie"
     },
@@ -169,25 +99,11 @@
         "video": "http://player.vimeo.com/video/32073805",
         "avatar": "img/logo.png",
         "image" : "img/female.png",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "contact": {
+            "email": "ken.brogan@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "ken.brogan1"
         },
         "twitter": "@rorymcilroy"
     },
@@ -201,25 +117,11 @@
         "avatar": "img/logo.png",
         "image" : "img/male.png",
         "video": "http://player.vimeo.com/video/32073805",
-        "interests": {
-            "trainers": [
-                "adidas",
-                "nike"
-            ],
-            "clothing": [
-                "Armani t-shirt",
-                "H&M slim jeans"
-            ],
-            "smellies": [
-                "Invictus by armani",
-                "Dior Sport by Dior"
-            ],
-            "phone": [
-                "iphone"
-            ],
-            "tablet": [
-                "ipad"
-            ]
+        "contact": {
+            "email": "stuart.byrne@hmhco.com",
+            "work": "0035312405943",
+            "mobile": "00353877822632",
+            "skype": "stuart.byrne5"
         },
         "twitter": "@rorymcilroy"
     }

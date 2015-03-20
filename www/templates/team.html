@@ -19,7 +19,7 @@
                 <h2 class="subdued">{{member.role}}</h2>
                 <p>{{member.start}}</p>
                 <div class="item-button-right">
-                    <button class="button button-icon ion-ios7-keypad-outline" ng-click="popover.show($event)"> 
+                    <button class="button button-icon ion-ios7-keypad-outline" ng-init="num=$index" ng-click="teamPopover.show($event);setContact(num)"> 
                     </button>
                 </div>
             </div>

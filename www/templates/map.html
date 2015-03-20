@@ -1,10 +1,14 @@
 <ion-view>
     <ion-nav-bar class="bar-energized">
-        <ion-nav-title>Location</ion-nav-title>
-        <ion-nav-buttons >
-            <button class="button button-icon button-clear ion-drag" menu-toggle="left"></button>
+        <ion-nav-title>Find Us</ion-nav-title>
+        <ion-nav-buttons>
+            <div class="buttons">
+                <button class="button button-icon button-clear ion-drag" menu-toggle="left">
+            </button>
+                <button ng-click="centerOnMe()" class="button icon button-icon ion-ios7-paperplane-outline"></button>
+            </div>
             <div class="item-button-right">
-            <button ng-click="centerOnMe()" class="button button-icon button-clear ion-ios7-paperplane"></button>
+                <a href="#/app/main" class="button icon button-icon">Home</a>
             </div>
         </ion-nav-buttons>
     </ion-nav-bar>

@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
  }
 })
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -43,6 +43,39 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+    
+     var template = '<ion-popover-view><ion-content><div class="list"><h2>Trinity Central</h2><p>152-160 Pearse Street</p><p>Dublin 2</p><p>Ireland</p></div></ion-content></ion-popover-view>';
+
+  $scope.popover = $ionicPopover.fromTemplate(template, {
+    scope: $scope,
+  });
+
+  // .fromTemplateUrl() method
+  $ionicPopover.fromTemplateUrl('my-popover.html', {
+    scope: $scope,
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function() {
+    // Execute action
+  });
 })
 
 .controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicSlideBoxDelegate', 'issueFactory', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, issueFactory) {
@@ -92,40 +125,69 @@ angular.module('starter.controllers', [])
       
       $http.get('content/team.json').success(function(data) {
             $scope.team = data;
-        }) 
-      var template = '<ion-popover-view><ion-content><div class="list"><a class="item" href="http://learn.ionicframework.com/" target="_blank">Learn Ionic</a><a class="item" href="http://ionicframework.com/docs/" target="_blank">Documentation</a><a class="item" href="http://showcase.ionicframework.com/" target="_blank">Showcase</a><a class="item" href="http://ionicframework.com/submit-issue/" target="_blank">Submit an Issue</a><a class="item" href="https://github.com/driftyco/ionic" target="_blank">Github Repo</a></div></ion-content></ion-popover-view>';
+          
+            $scope.contact = [];
+            angular.forEach(data, function(value){
+               this.push(value["contact"]);
+            }, $scope.contact);
+            
+            console.log($scope.contact);
+          
+        })
+      $scope.memberNum = Number;
+      
+      $scope.setContact = function(num){
+        
+          $scope.$parent.memberNum = num;
+          console.log($scope.$parent.memberNum);
+      }
+      
+      /*$scope.getContact = function(){
+          return $scope.$parent.memberNum;
+          console.log($scope.$parent.memberNum);
+              
+      }*/
+      
+      $scope.teamPopover = $ionicPopover.fromTemplateUrl('templates/team-popover.html', {
+            scope: $scope,
+      }).then(function(teamPopover) {
+        $scope.teamPopover = teamPopover;
+      });
 
-  $scope.popover = $ionicPopover.fromTemplate(template, {
-    scope: $scope,
-  });
+      $scope.openPopover = function($event) {
+        $scope.teamPopover.show($event);
+      };
+      $scope.closePopover = function() {
+        $scope.teamPopover.hide();
+      };
+      //Cleanup the popover when we're done with it!
+      $scope.$on('$destroy', function() {
+        $scope.teamPopover.remove();
+      });
+      // Execute action on hide popover
+      $scope.$on('teamPopover.hidden', function() {
+        // Execute action
+      });
+      // Execute action on remove popover
+      $scope.$on('teamPopover.removed', function() {
+        // Execute action
+      });
+    
+    
 
-  // .fromTemplateUrl() method
-  $ionicPopover.fromTemplateUrl('my-popover.html', {
-    scope: $scope,
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
-
-
-  $scope.openPopover = function($event) {
-    $scope.popover.show($event);
-  };
-  $scope.closePopover = function() {
-    $scope.popover.hide();
-  };
-  //Cleanup the popover when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.popover.remove();
-  });
-  // Execute action on hide popover
-  $scope.$on('popover.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove popover
-  $scope.$on('popover.removed', function() {
-    // Execute action
-  });
 })
+
+/*.controller('TeamPopCtrl', function ($scope, $http) {
+      
+      $http.get('content/team.json').success(function(data) {
+          $scope.contact = [];
+          angular.forEach(data, function(value){
+               this.push(value["contact"]);
+          }, $scope.contact);
+          console.log($scope.contact);
+        });
+  
+})*/
 
 .controller('MapCtrl', function($scope, $ionicLoading) {
     
