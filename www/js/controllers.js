@@ -121,9 +121,20 @@ angular.module('starter.controllers', [])
     };
     
 }])
-.controller('TeamCtrl', function ($scope, $http, $ionicPopover) {
+.controller('TeamCtrl', function ($scope, $http, $ionicPopover, $ionicLoading) {
+    
+        $ionicLoading.show({
+            template: '<i class="icon ion-loading-c"></i>',
+            showBackdrop: true
+        });
+    /*var url = 'https://googledrive.com/host/0B0778NZ3pAKKcWZWUjV1MUFsT0U/team.json';*/
+    /*var url = 'https://googledrive.com/host/0B0778NZ3pAKKcWZWUjV1MUFsT0U/team.gsheet';*/
+    var url = ' https://spreadsheets.google.com/feeds/list/1X2Tspx4jG86kPw8QPeStiXh9vZS9YcFvDwNI2IAMWZs/od6/public/values?alt=json';
       
-      $http.get('content/team.json').success(function(data) {
+      $http.get(url).success(function(data) {
+          console.log(data);
+            $ionicLoading.hide();
+          
             $scope.team = data;
           
             $scope.contact = [];
@@ -133,8 +144,23 @@ angular.module('starter.controllers', [])
             
             console.log($scope.contact);
           
-        })
-      $scope.memberNum = Number;
+            }).error(function(){
+          
+                $ionicLoading.hide();
+                console.log('Error Loading 1st Json: Getting Local Json');
+          
+                $http.get('content/team.json').success(function(data) {
+                    $scope.team = data;
+
+                    $scope.contact = [];
+                    angular.forEach(data, function(value){
+                       this.push(value["contact"]);
+                    }, $scope.contact);
+
+
+                })
+      })
+      /*$scope.memberNum = Number;*/
       
       $scope.setContact = function(num){
         
@@ -202,7 +228,7 @@ angular.module('starter.controllers', [])
     }
 
   $scope.loading = $ionicLoading.show({
-      content: 'Getting current location...',
+      content: '<p>Getting current location...</p>',
       showBackdrop: false
     });
 

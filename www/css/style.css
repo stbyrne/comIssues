@@ -20,7 +20,7 @@
     width: 100%;
     position: fixed;
     bottom: 0;
-    border-top: 2px solid rgb(60,60,60);
+    /*border-top: 2px solid rgb(60,60,60);*/
     /*padding: 40px 0;*/
 }
 
@@ -107,12 +107,15 @@
     background-color: rgba(60, 60, 60, 0.8);
     border-radius: 0;
     color: rgb(255, 170, 0);
+    text-align: left;
     
 }
-.teamPopover .list .item{
+.teamPopover .list .item, .teamPopover .list .item-content, .teamPopover .list .item p{
     
-    background-color: none;
+    background-color: transparent;
     border: none;
+    color: rgb(255, 170, 0);
+    text-align: left;
     
 }
 
@@ -124,6 +127,7 @@
 }
 .bar.bar-light{
     background-color: transparent;
+    border: none;
 }
 
 map {
@@ -140,8 +144,8 @@ map {
     background-color: rgba(0,0,0,0)!important;
 }
 i.icon.ion-loading-c {
-    color: rgb(0,170,50);
-    zoom: 4;
+    color: rgb(255, 170, 0);
+    zoom: 2;
 }
 
 map {
