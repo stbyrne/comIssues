@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
  return{
     getIssues : function() {
         return $http({
-            url: 'content/platform.json',
+            url: 'https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values?alt=json',
             method: 'GET'
         })
     }
@@ -80,13 +80,34 @@ angular.module('starter.controllers', [])
 
 .controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicSlideBoxDelegate', 'issueFactory', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, issueFactory) {
     
-    $scope.platforms = [];
+    
     $scope.item = {};
 
     issueFactory.getIssues().success(function(data){
-        $scope.platforms = data;
+        
+        console.log(data);
+        $scope.thinkcentral = [];
+        
+        angular.forEach(data.feed.entry, function(value){
+                
+                var issue = value["gsx$issue"].$t,
+                    cause = value["gsx$cause"].$t,
+                    hint = value["gsx$hint"].$t,
+                    jira = value["gsx$jira"].$t,
+                    process = value["gsx$process"].$t,
+                    text = value["gsx$text"].$t;
+                
+               this.push({issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+            }, $scope.thinkcentral);
+          
+            console.log($scope.thinkcentral);
 
-
+    }).error(function(){
+        console.log('Couldnt find latest Issues'); 
+        $http.get('content/platform.json').success(function(data){
+              console.log(data);
+            $scope.thinkcentral = data; 
+        });
     });
     
     $scope.setItem = function(item){
@@ -124,22 +145,42 @@ angular.module('starter.controllers', [])
 .controller('TeamCtrl', function ($scope, $http, $ionicPopover, $ionicLoading) {
     
         $ionicLoading.show({
-            template: '<i class="icon ion-loading-c"></i>',
+            template: '<p>Updating some commoditys info</p><i class="icon ion-loading-c"></i>',
             showBackdrop: true
         });
-    /*var url = 'https://googledrive.com/host/0B0778NZ3pAKKcWZWUjV1MUFsT0U/team.json';*/
-    /*var url = 'https://googledrive.com/host/0B0778NZ3pAKKcWZWUjV1MUFsT0U/team.gsheet';*/
-    var url = ' https://spreadsheets.google.com/feeds/list/1X2Tspx4jG86kPw8QPeStiXh9vZS9YcFvDwNI2IAMWZs/od6/public/values?alt=json';
+    
+    /*var url = 'content/team.json';*/
+    var url = 'https://spreadsheets.google.com/feeds/list/1X2Tspx4jG86kPw8QPeStiXh9vZS9YcFvDwNI2IAMWZs/od6/public/values?alt=json';
       
       $http.get(url).success(function(data) {
-          console.log(data);
+          
             $ionicLoading.hide();
           
-            $scope.team = data;
+            $scope.team = data.feed.entry;
+          
+            $scope.team = [];
+          
+            angular.forEach(data.feed.entry, function(value){
+                
+                var id = value["gsx$id"].$t,
+                    index = value["gsx$index"].$t,
+                    name = value["gsx$name"].$t,
+                    role = value["gsx$role"].$t,
+                    start = value["gsx$start"].$t,
+                    duties = value["gsx$duties"].$t,
+                    avatar = value["gsx$avatar"].$t,
+                    image = value["gsx$image"].$t;
+                
+               this.push({id:id, index:index, name:name, role:role, start:start, duties:duties, avatar:avatar, image:image});
+            }, $scope.team);
+          
+            console.log($scope.team);
+          
           
             $scope.contact = [];
-            angular.forEach(data, function(value){
-               this.push(value["contact"]);
+          
+            angular.forEach(data.feed.entry, function(value){
+               this.push([value["gsx$email"].$t, value["gsx$work"].$t, value["gsx$mobile"].$t, value["gsx$skype"].$t]);
             }, $scope.contact);
             
             console.log($scope.contact);
@@ -148,8 +189,11 @@ angular.module('starter.controllers', [])
           
                 $ionicLoading.hide();
                 console.log('Error Loading 1st Json: Getting Local Json');
+                
           
                 $http.get('content/team.json').success(function(data) {
+                    
+                    console.log(data);
                     $scope.team = data;
 
                     $scope.contact = [];
@@ -198,22 +242,8 @@ angular.module('starter.controllers', [])
       $scope.$on('teamPopover.removed', function() {
         // Execute action
       });
-    
-    
 
 })
-
-/*.controller('TeamPopCtrl', function ($scope, $http) {
-      
-      $http.get('content/team.json').success(function(data) {
-          $scope.contact = [];
-          angular.forEach(data, function(value){
-               this.push(value["contact"]);
-          }, $scope.contact);
-          console.log($scope.contact);
-        });
-  
-})*/
 
 .controller('MapCtrl', function($scope, $ionicLoading) {
     
@@ -241,10 +271,4 @@ angular.module('starter.controllers', [])
     });
   };
 });
-
-
-
-    
-
-
     

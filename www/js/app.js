@@ -110,6 +110,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
         }
       }
   })
+      .state('app.platform_tc', {
+      url: "/thinkcentral",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/thinkcentral.html",
+          controller: 'IssuesListCtrl'
+        }
+      }
+  })
+      .state('app.platform_hmof', {
+      url: "/hmof",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/hmof.html",
+          controller: 'IssuesListCtrl'
+        }
+      }
+  })
 
   .state('app.single', {
     url: "/issues/:issue",
