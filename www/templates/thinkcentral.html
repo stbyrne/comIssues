@@ -20,8 +20,8 @@
         
             <ion-item  class="item-divider item icon item-icon-left">
                 <i class="icon ion-ios7-gear-outline"></i>{{issues.process}}</ion-item>
-            <ion-item ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
-                <img src={{issues.images[0]}}>
+            <ion-item href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
+                <img src={{issues.thumb}}>
                 <h2>{{issues.issue}}</h2>
                 <p>{{issues.hint}}</p>
                 <i class="icon ion-ios7-arrow-right"></i>

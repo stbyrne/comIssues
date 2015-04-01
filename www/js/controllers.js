@@ -1,11 +1,23 @@
 angular.module('starter.controllers', [])
 
-.factory('issueFactory', function($http) {
+.factory('issuesThinkCentral', function($http) {
     
  return{
     getIssues : function() {
         return $http({
             url: 'https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values?alt=json',
+            method: 'GET'
+        })
+    }
+ }
+})
+
+.factory('issuesHmof', function($http) {
+    
+ return{
+    getIssues : function() {
+        return $http({
+            url: 'https://spreadsheets.google.com/feeds/list/1huBXSUHO39y9WAFQagxoY8z3oiz1h9MFSc-Vx0hIXJE/od6/public/values?alt=json',
             method: 'GET'
         })
     }
@@ -78,15 +90,16 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicSlideBoxDelegate', 'issueFactory', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, issueFactory) {
+.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicSlideBoxDelegate', 'issuesThinkCentral', 'issuesHmof', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, issuesThinkCentral, issuesHmof) {
     
     
     $scope.item = {};
 
-    issueFactory.getIssues().success(function(data){
+    issuesThinkCentral.getIssues().success(function(data){
         
         console.log(data);
         $scope.thinkcentral = [];
+        /*$scope.images = [];*/
         
         angular.forEach(data.feed.entry, function(value){
                 
@@ -95,22 +108,90 @@ angular.module('starter.controllers', [])
                     hint = value["gsx$hint"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
+                    thumb = value["gsx$thumb"].$t,
                     text = value["gsx$text"].$t;
+            
                 
-               this.push({issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+               this.push({thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text, });
             }, $scope.thinkcentral);
-          
+        
             console.log($scope.thinkcentral);
 
-    }).error(function(){
-        console.log('Couldnt find latest Issues'); 
-        $http.get('content/platform.json').success(function(data){
-              console.log(data);
-            $scope.thinkcentral = data; 
+            }).error(function(){
+                console.log('Couldnt find latest Issues'); 
+                $http.get('content/thinkcentral.json').success(function(data){
+                    console.log(data);
+                $scope.thinkcentral = [];
+                /*$scope.images = [];*/
+
+                angular.forEach(data.feed.entry, function(value){
+
+                        var issue = value["gsx$issue"].$t,
+                            cause = value["gsx$cause"].$t,
+                            hint = value["gsx$hint"].$t,
+                            jira = value["gsx$jira"].$t,
+                            process = value["gsx$process"].$t,
+                            thumb = value["gsx$thumb"].$t,
+                            text = value["gsx$text"].$t;
+
+
+                       this.push({thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text, });
+                    }, $scope.thinkcentral);
+
+                    console.log($scope.thinkcentral); 
+                });
+            });
+    
+    issuesHmof.getIssues().success(function(data){
+        
+        console.log(data);
+        $scope.hmof = [];
+        /*$scope.images = [];*/
+        
+        angular.forEach(data.feed.entry, function(value){
+                
+                var issue = value["gsx$issue"].$t,
+                    cause = value["gsx$cause"].$t,
+                    hint = value["gsx$hint"].$t,
+                    jira = value["gsx$jira"].$t,
+                    process = value["gsx$process"].$t,
+                    thumb = value["gsx$thumb"].$t,
+                    text = value["gsx$text"].$t;
+            
+                
+               this.push({thumb:thumb, issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+            }, $scope.hmof);
+        
+            console.log($scope.hmof);
+
+        }).error(function(){
+            console.log('Couldnt find latest Issues'); 
+            $http.get('content/hmof.json').success(function(data){
+                console.log(data);
+            $scope.hmof = [];
+            /*$scope.images = [];*/
+
+            angular.forEach(data.feed.entry, function(value){
+
+                    var issue = value["gsx$issue"].$t,
+                        cause = value["gsx$cause"].$t,
+                        hint = value["gsx$hint"].$t,
+                        jira = value["gsx$jira"].$t,
+                        process = value["gsx$process"].$t,
+                        thumb = value["gsx$thumb"].$t,
+                        text = value["gsx$text"].$t;
+
+
+                   this.push({thumb:thumb, issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+                }, $scope.hmof);
+
+                console.log($scope.hmof);
+            });
         });
-    });
     
     $scope.setItem = function(item){
+        
+        console.log(item);
         
         $scope.$parent.item = item;
         $scope.$parent.images = item.images;

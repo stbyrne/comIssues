@@ -1,0 +1,217 @@
+{
+    "version": "1.0",
+    "encoding": "UTF-8",
+    "feed": {
+        "xmlns": "http://www.w3.org/2005/Atom",
+        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
+        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
+        "id": {
+            "$t": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values"
+        },
+        "updated": {
+            "$t": "2015-03-27T16:46:41.565Z"
+        },
+        "category": [{
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#list"
+        }],
+        "title": {
+            "type": "text",
+            "$t": "Sheet1"
+        },
+        "link": [{
+            "rel": "alternate",
+            "type": "application/atom+xml",
+            "href": "https://docs.google.com/spreadsheets/d/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/pubhtml"
+        }, {
+            "rel": "http://schemas.google.com/g/2005#feed",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values"
+        }, {
+            "rel": "http://schemas.google.com/g/2005#post",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values"
+        }, {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values?alt\u003djson"
+        }],
+        "author": [{
+            "name": {
+                "$t": "strtbyrne"
+            },
+            "email": {
+                "$t": "strtbyrne@gmail.com"
+            }
+        }],
+        "openSearch$totalResults": {
+            "$t": "3"
+        },
+        "openSearch$startIndex": {
+            "$t": "1"
+        },
+        "entry": [{
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values/cokwr"
+            },
+            "updated": {
+                "$t": "2015-03-27T16:46:41.565Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "MDS"
+            },
+            "content": {
+                "type": "text",
+                "$t": "index: 1, issue: Resources don't show up on dashboard or in search, hint: Component value in mappings.xml, cause: Component value in inputs do not match any of the list of component values in the mappings.xml, text: mds_resources.xlsx goes back to the LA team and the correct component value is updated. This process can take several days to be resolved., jira: https://jira.hmhpub.com/browse/CDEV-17286, thumb: img/screen/1.png, image2: img/screen/2.png, image3: img/screen/3.png"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values/cokwr"
+            }],
+            "gsx$process": {
+                "$t": "MDS"
+            },
+            "gsx$index": {
+                "$t": "1"
+            },
+            "gsx$issue": {
+                "$t": "Resources don't show up on dashboard or in search"
+            },
+            "gsx$hint": {
+                "$t": "Component value in mappings.xml"
+            },
+            "gsx$cause": {
+                "$t": "Component value in inputs do not match any of the list of component values in the mappings.xml"
+            },
+            "gsx$text": {
+                "$t": "mds_resources.xlsx goes back to the LA team and the correct component value is updated. This process can take several days to be resolved."
+            },
+            "gsx$jira": {
+                "$t": "https://jira.hmhpub.com/browse/CDEV-17286"
+            },
+            "gsx$thumb": {
+                "$t": "img/screen/1.png"
+            },
+            "gsx$image2": {
+                "$t": "img/screen/2.png"
+            },
+            "gsx$image3": {
+                "$t": "img/screen/3.png"
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values/cpzh4"
+            },
+            "updated": {
+                "$t": "2015-03-27T16:46:41.565Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "MDS"
+            },
+            "content": {
+                "type": "text",
+                "$t": "index: 2, issue: Unable to assign prescriptions to a student, hint: Correlations, cause: Prescription ID missing/incorrect in correlations.xml, text: Correlations.xlsx goes back to the LA team and the correct prescription is added to the relevant answer in that test., jira: https://jira.hmhpub.com/browse/MFTR-9880, thumb: img/screen/1.png, image2: img/screen/2.png, image3: img/screen/3.png"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values/cpzh4"
+            }],
+            "gsx$process": {
+                "$t": "MDS"
+            },
+            "gsx$index": {
+                "$t": "2"
+            },
+            "gsx$issue": {
+                "$t": "Unable to assign prescriptions to a student"
+            },
+            "gsx$hint": {
+                "$t": "Correlations"
+            },
+            "gsx$cause": {
+                "$t": "Prescription ID missing/incorrect in correlations.xml"
+            },
+            "gsx$text": {
+                "$t": "Correlations.xlsx goes back to the LA team and the correct prescription is added to the relevant answer in that test."
+            },
+            "gsx$jira": {
+                "$t": "https://jira.hmhpub.com/browse/MFTR-9880"
+            },
+            "gsx$thumb": {
+                "$t": "img/screen/1.png"
+            },
+            "gsx$image2": {
+                "$t": "img/screen/2.png"
+            },
+            "gsx$image3": {
+                "$t": "img/screen/3.png"
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values/cre1l"
+            },
+            "updated": {
+                "$t": "2015-03-27T16:46:41.565Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "Knowledge Graph"
+            },
+            "content": {
+                "type": "text",
+                "$t": "index: 3, issue: Products are not visible on TC Production after entitlement, hint: Backend issue, cause: Entitlements being queued from HSP database to TC database and timing out, text: Backend issue resolved by recycling HspSupport_cluster., jira: https://jira.hmhpub.com/browse/BF-6150, thumb: img/screen/1.png, image2: img/screen/2.png, image3: img/screen/3.png"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values/cre1l"
+            }],
+            "gsx$process": {
+                "$t": "Knowledge Graph"
+            },
+            "gsx$index": {
+                "$t": "3"
+            },
+            "gsx$issue": {
+                "$t": "Products are not visible on TC Production after entitlement"
+            },
+            "gsx$hint": {
+                "$t": "Backend issue"
+            },
+            "gsx$cause": {
+                "$t": "Entitlements being queued from HSP database to TC database and timing out"
+            },
+            "gsx$text": {
+                "$t": "Backend issue resolved by recycling HspSupport_cluster."
+            },
+            "gsx$jira": {
+                "$t": "https://jira.hmhpub.com/browse/BF-6150"
+            },
+            "gsx$thumb": {
+                "$t": "img/screen/1.png"
+            },
+            "gsx$image2": {
+                "$t": "img/screen/2.png"
+            },
+            "gsx$image3": {
+                "$t": "img/screen/3.png"
+            }
+        }]
+    }
+}

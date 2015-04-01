@@ -16,20 +16,17 @@
             <i class="icon ion-search placeholder-icon"></i>
             <input type="text" placeholder="Search issues" ng-model="searchIssues">
         </label>
-        <div ng-repeat="(key, issues) in platforms">
-        <ion-item  class="item-divider item-royal item-text-centre">{{key}}</ion-item>
-            <div ng-repeat="issue in issues">
-                <div ng-repeat="(name, process) in issue | filter:searchIssues">
-        <ion-item  class="item-divider item icon item-icon-left">
-            <i class="icon ion-ios7-gear-outline"></i>{{name}}</ion-item>
-      <ion-item ng-repeat="issues in process | filter:searchIssues" href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
-        <img src={{issues.images[0]}}>
-        <h2>{{issues.issue}}</h2>
-        <p>{{issues.hint}}</p>
-          <i class="icon ion-ios7-arrow-right"></i>
-      </ion-item>
-                    </div>
-                </div>
+        <div ng-repeat="issues in hmof | filter:searchIssues">
+        
+            <ion-item  class="item-divider item icon item-icon-left">
+                <i class="icon ion-ios7-gear-outline"></i>{{issues.process}}</ion-item>
+            <ion-item href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
+                <img src={{issues.thumb}}>
+                <h2>{{issues.issue}}</h2>
+                <p>{{issues.hint}}</p>
+                <i class="icon ion-ios7-arrow-right"></i>
+            </ion-item>
+            
         </div>
     </ion-list>
 </ion-content>
