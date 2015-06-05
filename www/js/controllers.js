@@ -116,6 +116,7 @@ angular.module('starter.controllers', [])
             }, $scope.thinkcentral);
         
             console.log($scope.thinkcentral);
+            console.log(typeof($scope.process));
 
             }).error(function(){
                 console.log('Couldnt find latest Issues'); 

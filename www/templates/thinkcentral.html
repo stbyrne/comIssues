@@ -18,7 +18,7 @@
         </label>
         <div ng-repeat="issues in thinkcentral | filter:searchIssues">
         
-            <ion-item  class="item-divider item icon item-icon-left">
+            <ion-item ng-if="issues.process" class="item-divider item icon item-icon-left">
                 <i class="icon ion-ios7-gear-outline"></i>{{issues.process}}</ion-item>
             <ion-item href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
                 <img src={{issues.thumb}}>
