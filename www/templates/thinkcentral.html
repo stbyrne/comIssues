@@ -15,6 +15,8 @@
         <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
             <input type="text" placeholder="Search issues" ng-model="searchIssues">
+            <button ng-if="searchIssues.length" class="icon button-icon ion-ios7-close-outline" ng-click="$parent.searchIssues=''">
+            </button>
         </label>
         <div ng-repeat="issues in thinkcentral | filter:searchIssues">
         

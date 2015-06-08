@@ -94,16 +94,17 @@ angular.module('starter.controllers', [])
     
     
     $scope.item = {};
-
+   
     issuesThinkCentral.getIssues().success(function(data){
         
         console.log(data);
         $scope.thinkcentral = [];
-        /*$scope.images = [];*/
+        $scope.images = ['img/screen/1.png', 'img/screen/2.png'];
         
         angular.forEach(data.feed.entry, function(value){
                 
                 var issue = value["gsx$issue"].$t,
+                    index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
                     hint = value["gsx$hint"].$t,
                     jira = value["gsx$jira"].$t,
@@ -111,7 +112,6 @@ angular.module('starter.controllers', [])
                     thumb = value["gsx$thumb"].$t,
                     text = value["gsx$text"].$t;
             
-                
                this.push({thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text, });
             }, $scope.thinkcentral);
         
@@ -219,7 +219,7 @@ angular.module('starter.controllers', [])
     // Open the login modal
     $scope.showImage = function() {
         $scope.modal.show();
-        /*$ionicSlideBoxDelegate.update();*/
+        $ionicSlideBoxDelegate.update(500);
         console.log($scope.images);
     };
     

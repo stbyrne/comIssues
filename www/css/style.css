@@ -49,6 +49,7 @@
     font-size: .8em;
     font-weight: 200;
     color: rgb(255,255,255);
+    
 }
 .contact-list .list .item .item-content:active p{
     color: rgb(40,40,40);
@@ -95,6 +96,10 @@
     background-size: cover; /* version standardisée */
 }
 
+.issue-detail .list .item p{
+    margin-top: 0;   
+}
+
 .popover{
     background-color: rgba(255,255,255, 0.9);
     border: none;
@@ -103,19 +108,20 @@
     border-radius: 15px 0 15px 15px;
     
 }
-.teamPopover{
+/*.teamPopover{
     background-color: rgba(60, 60, 60, 0.8);
     border-radius: 0;
     color: rgb(255, 170, 0);
     text-align: left;
     
-}
+}*/
 .teamPopover .list .item, .teamPopover .list .item-content, .teamPopover .list .item p{
     
     background-color: transparent;
     border: none;
-    color: rgb(255, 170, 0);
+    color: rgb(30, 30, 30);
     text-align: left;
+    font-size: 18px;
     
 }
 
