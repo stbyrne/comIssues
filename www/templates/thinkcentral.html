@@ -12,10 +12,10 @@
 <ion-content>
         
     <ion-list>
-        <label class="item item-input">
+        <label class="item item-input issue-search">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="text" placeholder="Search issues" ng-model="searchIssues">
-            <button ng-if="searchIssues.length" class="icon button-icon ion-ios7-close-outline" ng-click="$parent.searchIssues=''">
+            <input type="search" placeholder="Search Issues" ng-model="searchIssues">
+            <button ng-if="searchIssues.length" class="icon button-icon ion-ios7-close-outline" ng-click="$parent.searchIssues='Test'">
             </button>
         </label>
         <div ng-repeat="issues in thinkcentral | filter:searchIssues">

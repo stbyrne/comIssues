@@ -328,10 +328,26 @@ angular.module('starter.controllers', [])
 })
 
 .controller('MapCtrl', function($scope, $ionicLoading) {
-    
   $scope.mapCreated = function(map) {
     $scope.map = map;
+      
+    var hmhloc = new google.maps.LatLng(53.343337, -6.246892);
+      
+    var hmhOffices = 'img/loc.svg';
+        
+    new google.maps.Marker({
+            position: hmhloc,
+            map: $scope.map,
+            icon: hmhOffices,
+            title: "PFA Ireland Offices"
+    });
+      
+    $scope.map.setZoom(10);
+      
+    $scope.map.setCenter(hmhloc);
   };
+    
+    var defaultLatLng = new google.maps.LatLng(53.343337, -6.246892); 
 
   $scope.centerOnMe = function () {
     console.log("Centering");
@@ -339,18 +355,58 @@ angular.module('starter.controllers', [])
       return;
     }
 
-  $scope.loading = $ionicLoading.show({
-      content: '<p>Getting current location...</p>',
-      showBackdrop: false
+    $ionicLoading.show({
+        template: '<p>Lets find your current location</p><i class="icon ion-loading-c"></i>',
+        showBackdrop: true
     });
 
-  navigator.geolocation.getCurrentPosition(function (pos) {
-      console.log('Got pos', pos);
-      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-      $scope.loading.hide();
+    navigator.geolocation.getCurrentPosition(function (pos) {
+        
+        console.log('Got pos', pos);
+        var loc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        $scope.map.setCenter(loc);
+        var infowindow = new google.maps.InfoWindow({
+            content: "<span>Here you are</span>"
+        });
+        var location = new google.maps.Marker({
+            position: loc,
+            map: $scope.map
+        });
+        
+        /*google.maps.event.addListener(location, 'click', function() {
+            infowindow.open($scope.map,location);
+        });*/
+        $ionicLoading.hide();
+        
     }, function (error) {
-      alert('Unable to get location: ' + error.message);
-    });
+            alert('Unable to get location: ' + error.message);
+        });
   };
+    
+    function setCenter(latlng) {
+        var myOptions = {
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var hmhOffices = 'images/loc.svg';
+        var marker;
+        marker.setMap(null);
+        marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "You are here!"
+        });
+        var marker2;
+        marker2.setMap(null);
+        marker2 = new google.maps.Marker({
+            position: defaultLatLng,
+            map: map,
+            icon: hmhOffices,
+            title: "PFA Ireland Offices"
+        });
+        
+    }
+    
+    /////////////////
 });
     

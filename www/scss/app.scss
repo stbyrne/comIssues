@@ -1,3 +1,13 @@
+// HMH Colors
+// -------------------------------
+
+$hmhorange:                          #ffc800;
+$hmhlight:                           #b7b7b7;
+
+//--------------------------------
+
+
+
 /*
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
@@ -19,6 +29,16 @@ $hmhorange:                       #fac42e !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-// Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+@import "ionic/scss/ionic";
+
+
+
+.bar-hmhorange{
+    background-color: $hmhorange;   
+}
+.item-hmhlight{
+    background-color: $hmhlight;   
+}
+
+
 
