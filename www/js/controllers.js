@@ -262,7 +262,13 @@ angular.module('starter.controllers', [])
             $scope.contact = [];
           
             angular.forEach(data.feed.entry, function(value){
-               this.push([value["gsx$email"].$t, value["gsx$work"].$t, value["gsx$mobile"].$t, value["gsx$skype"].$t]);
+                
+                var email = value["gsx$email"].$t,
+                    telwork = value["gsx$work"].$t,
+                    telmobile = value["gsx$mobile"].$t,
+                    skype = value["gsx$skype"].$t;
+                
+               this.push({email:email, telwork:telwork, telmobile:telmobile, skype:skype});
             }, $scope.contact);
             
             console.log($scope.contact);

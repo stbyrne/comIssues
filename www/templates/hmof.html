@@ -12,13 +12,15 @@
 <ion-content>
         
     <ion-list>
-        <label class="item item-input issue-search">
+        <div class="item item-input issue-search">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="text" placeholder="Search issues" ng-model="searchIssues">
-        </label>
+            <input type="search" placeholder="Search Issues" ng-model="searchIssues">
+            <button ng-if="searchIssues.length" class="icon button-icon ion-ios7-close-outline" ng-click="$parent.searchIssues=''">
+            </button>
+        </div>
         <div ng-repeat="issues in hmof | filter:searchIssues">
         
-            <ion-item  ng-if="issues.process" class="item-divider item icon item-icon-left">
+            <ion-item  ng-if="issues.process" class="item-divider item-dark icon item-icon-left">
                 <i class="icon ion-ios7-gear-outline"></i>{{issues.process}}</ion-item>
             <ion-item href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-thumbnail-left item-icon-right">
                 <img src={{issues.thumb}}>
