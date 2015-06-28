@@ -1,7 +1,7 @@
 <ion-popover-view class="teamPopover">
     <ion-content>
         
-        <ion-list class="list" ng-repeat="(key,value) in contact[memberNum]">
+        <ion-list class="list team-contact" ng-repeat="(key,value) in contact[memberNum]">
             <ion-item ng-if="key=='email'" class="item-icon-right" href="mailto:{{value}}">
                 <p>{{value}}</p>
                 <i class="icon ion-ios7-email-outline contact-item"></i>
@@ -14,7 +14,7 @@
                 <p>{{value}}</p>
                 <i class="icon ion-iphone contact-item"></i>
             </ion-item>
-            <ion-item ng-if="key=='skype'" class="item-icon-right" href="skype:{{value}}?call">
+            <ion-item ng-if="key=='skype'" class="item-icon-right" href="skype:{{value}}">
                 <p>{{value}}</p>
                 <i class="icon ion-social-skype-outline contact-item"></i>
             </ion-item>

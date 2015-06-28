@@ -124,6 +124,10 @@
     font-size: 18px;
     
 }
+.teamPopover .list .item, .teamPopover .list .item-content.activated p,.teamPopover .list .item-content.activated i{
+    
+    color: rgb(0, 128, 255);   
+}
 
 .bar-light{
     background-color: transparent;
