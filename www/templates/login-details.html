@@ -1,0 +1,40 @@
+<ion-view >
+     
+<ion-nav-buttons class="bar-energized">
+        <div class="buttons"><button class="button button-icon button-clear ion-drag" menu-toggle="left">
+        </button>
+        </div>
+            <h1 class="title">Regular Logins</h1>
+        <div class="buttons">
+            <a href="#/app/main" class="button icon button-icon">Home</a>
+        </div>
+    </ion-nav-buttons>
+    <ion-content>
+       
+        
+        <div class="card" ng-repeat="detail in loginData" >
+            <!--<div class="item">-->
+                <!--<img src={{detail.avatar}}>-->
+                <div class="item item-dark item-divider" ng-if="detail.description">{{detail.description}}</div>
+                <div class="item item-text-wrap">{{detail.environment}}</div>
+                <div class="item item-text-wrap">URL: {{detail.url}}</div>
+                <div class="item item-text-wrap">Username: {{detail.username}}</div>
+                <div class="item item-text-wrap">Password: {{detail.password}}</div>
+                <!--<div class="item-button-right">
+                    <button class="button button-icon ion-ios7-keypad-outline" ng-init="num=$index" ng-click="teamPopover.show($event);setContact(num)"> 
+                    </button>
+                </div>-->
+            <!--</div>-->
+                <div class="item item-divider">
+                    {{detail.notes}}
+                </div>
+
+            <!--<div class="item item-body">
+                <h2 class="subdued">Notes:</h2>
+                <p>{{detail.notes}}
+                </p>
+                
+            </div>-->
+        </div>
+    </ion-content>
+</ion-view>

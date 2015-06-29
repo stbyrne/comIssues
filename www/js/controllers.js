@@ -24,6 +24,18 @@ angular.module('starter.controllers', [])
  }
 })
 
+.factory('regularLogins', function($http) {
+    
+ return{
+    getData : function() {
+        return $http({
+            url: 'https://spreadsheets.google.com/feeds/list/1Hwgui_5_y_jZ6rd0SiZ9q3vBkb-_BN5K_PTbRtogC_o/od6/public/values?alt=json',
+            method: 'GET'
+        })
+    }
+ }
+})
+
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
   // Form data for the login modal
   $scope.loginData = {};
@@ -96,6 +108,10 @@ angular.module('starter.controllers', [])
    
     issuesThinkCentral.getIssues().success(function(data){
         
+        var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
+    
+        console.log(imagePath);
+        
         console.log(data);
         $scope.thinkcentral = [];
         $scope.images = ['img/screen/1.png', 'img/screen/2.png'];
@@ -108,7 +124,7 @@ angular.module('starter.controllers', [])
                     hint = value["gsx$hint"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
-                    thumb = value["gsx$thumb"].$t,
+                    thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
                     text = value["gsx$text"].$t;
             
             
@@ -146,6 +162,8 @@ angular.module('starter.controllers', [])
     
     issuesHmof.getIssues().success(function(data){
         
+        var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfl9TcDlvVWdqSU5seE54WDZTX3ZTVHlNUVkyMl9RMXlBalNoVnJ4U3BuQ2M/';
+        
         console.log(data);
         $scope.hmof = [];
         /*$scope.images = [];*/
@@ -153,11 +171,12 @@ angular.module('starter.controllers', [])
         angular.forEach(data.feed.entry, function(value){
                 
                 var issue = value["gsx$issue"].$t,
+                    index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
                     hint = value["gsx$hint"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
-                    thumb = value["gsx$thumb"].$t,
+                    thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
                     text = value["gsx$text"].$t;
             
                 
@@ -333,6 +352,35 @@ angular.module('starter.controllers', [])
       });
 
 })
+
+.controller('LoginsCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'regularLogins', function($scope, $http, $timeout, $ionicLoading, regularLogins) {
+    
+    regularLogins.getData().success(function(data){
+        
+        
+        console.log(data);
+        $scope.loginData = [];
+        
+        angular.forEach(data.feed.entry, function(value){
+                
+                var description = value["gsx$description"].$t,
+                    environment = value["gsx$environment"].$t,
+                    url = value["gsx$url"].$t,
+                    username = value["gsx$username"].$t,
+                    password = value["gsx$password"].$t,
+                    notes = value["gsx$notes"].$t;
+            
+                
+               this.push({description:description, environment:environment, url:url, username:username, password:password, notes:notes});
+            }, $scope.loginData);
+        
+            console.log($scope.loginData);
+
+        }).error(function(){
+            
+        });
+
+}])
 
 .controller('MapCtrl', function($scope, $ionicLoading) {
   $scope.mapCreated = function(map) {

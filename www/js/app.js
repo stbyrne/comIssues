@@ -137,6 +137,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
         controller: 'IssuesListCtrl'
       }
     }
+  })
+  
+  .state('app.login-details', {
+    url: "/login-details",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/login-details.html",
+        controller: 'LoginsCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/main');
