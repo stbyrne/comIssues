@@ -90,11 +90,11 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicSlideBoxDelegate', 'issuesThinkCentral', 'issuesHmof', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, issuesThinkCentral, issuesHmof) {
+.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicLoading', '$ionicSlideBoxDelegate', 'issuesThinkCentral', 'issuesHmof', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
     
     
     $scope.item = {};
-   
+    
     issuesThinkCentral.getIssues().success(function(data){
         
         console.log(data);
@@ -117,6 +117,7 @@ angular.module('starter.controllers', [])
         
             console.log($scope.thinkcentral);
             console.log(typeof($scope.process));
+        
 
             }).error(function(){
                 console.log('Couldnt find latest Issues'); 
