@@ -92,9 +92,8 @@ angular.module('starter.controllers', [])
 
 .controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicLoading', '$ionicSlideBoxDelegate', 'issuesThinkCentral', 'issuesHmof', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
     
-    
     $scope.item = {};
-    
+   
     issuesThinkCentral.getIssues().success(function(data){
         
         console.log(data);
@@ -111,6 +110,7 @@ angular.module('starter.controllers', [])
                     process = value["gsx$process"].$t,
                     thumb = value["gsx$thumb"].$t,
                     text = value["gsx$text"].$t;
+            
             
                this.push({thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text, });
             }, $scope.thinkcentral);
