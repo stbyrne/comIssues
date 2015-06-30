@@ -2,8 +2,9 @@
 // -------------------------------
 
 $hmhorange:                          #ffc800;
-$hmhlight:                           #cbcbcb;
-$hmhdark:                            #343434;
+$hmhlight:                           #d8d8d8;
+$hmhdark:                            #5c5c5c;
+$hmhwhite:                           #f0f0f0;
 
 //--------------------------------
 
@@ -36,12 +37,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .bar-hmhorange{
     background-color: $hmhorange;   
+    color: $hmhwhite;   
 }
 .item-hmhlight{
     background-color: $hmhlight;   
+    color: $hmhdark;   
 }
 .item-hmhdark{
     background-color: $hmhdark;   
+    color: $hmhwhite;   
 }
 
 
