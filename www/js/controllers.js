@@ -29,7 +29,19 @@ angular.module('starter.controllers', [])
  return{
     getData : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/1Hwgui_5_y_jZ6rd0SiZ9q3vBkb-_BN5K_PTbRtogC_o/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/list/1qaCiLfFs5zfrtsp0nyMmh00dqBizgxs6bYq9bdNQHRs/od6/public/values?alt=json',
+            method: 'GET'
+        })
+    }
+ }
+})
+
+.factory('escalations', function($http) {
+    
+ return{
+    getData : function() {
+        return $http({
+            url: 'https://spreadsheets.google.com/feeds/list/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/values?alt=json',
             method: 'GET'
         })
     }
@@ -372,6 +384,35 @@ angular.module('starter.controllers', [])
             
                 
                this.push({description:description, environment:environment, url:url, username:username, password:password, notes:notes});
+            }, $scope.loginData);
+        
+            console.log($scope.loginData);
+
+        }).error(function(){
+            
+        });
+
+}])
+
+.controller('EscalationCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'escalations', function($scope, $http, $timeout, $ionicLoading, escalations) {
+    
+    escalations.getData().success(function(data){
+        
+        
+        console.log(data);
+        $scope.loginData = [];
+        
+        angular.forEach(data.feed.entry, function(value){
+                
+                var platform = value["gsx$platform"].$t,
+                    environment = value["gsx$environment"].$t,
+                    initial = value["gsx$initial"].$t,
+                    action = value["gsx$action"].$t,
+                    escalation = value["gsx$escalation"].$t,
+                    notes = value["gsx$notes"].$t;
+            
+                
+               this.push({platform:platform, environment:environment, initial:initial, action:action, escalation:escalation, notes:notes});
             }, $scope.loginData);
         
             console.log($scope.loginData);

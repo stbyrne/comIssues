@@ -7021,10 +7021,27 @@ a.button {
   background-color: #ffc800;
   color: #f0f0f0; }
 
+.item-hmhorange {
+  background-color: #ffc800;
+  color: #5c5c5c; }
+
 .item-hmhlight {
-  background-color: #d8d8d8;
+  background-color: #eaeaea;
   color: #5c5c5c; }
 
 .item-hmhdark {
   background-color: #5c5c5c;
   color: #f0f0f0; }
+
+.item-hmhvibrant {
+  background-color: #deb7ff;
+  color: #f0f0f0; }
+
+.item-hmhvibrant p {
+  color: #f0f0f0; }
+
+.escalation .icon {
+  display: block;
+  margin: 0 auto;
+  height: 32px;
+  font-size: 20px; }

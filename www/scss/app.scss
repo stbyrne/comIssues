@@ -2,9 +2,10 @@
 // -------------------------------
 
 $hmhorange:                          #ffc800;
-$hmhlight:                           #d8d8d8;
+$hmhlight:                           #eaeaea;
 $hmhdark:                            #5c5c5c;
 $hmhwhite:                           #f0f0f0;
+$hmhvibrant:                         #deb7ff;
 
 //--------------------------------
 
@@ -34,10 +35,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "ionic/scss/ionic";
 
 
-
 .bar-hmhorange{
     background-color: $hmhorange;   
     color: $hmhwhite;   
+}
+.item-hmhorange{
+    background-color: $hmhorange;   
+    color: $hmhdark;   
 }
 .item-hmhlight{
     background-color: $hmhlight;   
@@ -46,6 +50,19 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .item-hmhdark{
     background-color: $hmhdark;   
     color: $hmhwhite;   
+}
+.item-hmhvibrant{
+    background-color: $hmhvibrant;   
+    color: $hmhwhite;   
+}
+.item-hmhvibrant p{
+    color: $hmhwhite;   
+}
+.escalation .icon{
+  display: block;
+  margin: 0 auto;
+  height: 32px;
+  font-size: 20px;
 }
 
 
