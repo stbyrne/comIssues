@@ -22,14 +22,14 @@
             <h2 class="item item-hmhdark item-divider">{{detail.platform}}</h2>
             <h2 class="item item-hmhorange item-divider">{{detail.environment}}</h2>
             <div class="item item-hmhlight tabs tabs-secondary tabs-icon-left escalation">
-                <p class="tab-item"><span class="icon">1</span>Action</p>
-                <p class="tab-item"><span class="icon">2</span>Follow-Up</p>
-                <p class="tab-item"><span class="icon">3</span>Escalation</p>
+                <p class="tab-item"><span class="icon green">1</span>Initial Action</p>
+                <p class="tab-item"><span class="icon amber">2</span>Follow-Up</p>
+                <p class="tab-item"><span class="icon red">3</span>Escalation</p>
             </div>
             <div class="item item-text-wrap">
-            <p class="item item-icon-left"><i class="icon">1</i>{{detail.initial}}</p>
-            <p class="item item-icon-left"><i class="icon">2</i>{{detail.action}}</p>
-            <p class="item item-icon-left"><i class="icon">3</i>{{detail.escalation}}</p>
+            <p class="item item-icon-left"><i class="icon green">1</i>{{detail.initial}}</p>
+            <p class="item item-icon-left"><i class="icon amber">2</i>{{detail.action}}</p>
+            <p class="item item-icon-left"><i class="icon red">3</i>{{detail.escalation}}</p>
         </div>
                 <!--<div class="item-button-right">
                     <button class="button button-icon ion-ios7-keypad-outline" ng-init="num=$index" ng-click="teamPopover.show($event);setContact(num)"> 

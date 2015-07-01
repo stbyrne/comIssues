@@ -59,10 +59,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     color: $hmhwhite;   
 }
 .escalation .icon{
-  display: block;
-  margin: 0 auto;
-  height: 32px;
   font-size: 20px;
+}
+.icon.green{
+  color: #00bc36;
+}
+.icon.amber{
+  color: #ffa700;
+}
+.icon.red{
+  color: #eb0000;
 }
 
 
