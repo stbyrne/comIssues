@@ -1,5 +1,6 @@
 {
     "jscodehints.detectedExclusions": [
-        "C:/Users/byrnes/Documents/GitHub/comIssues/www/js/app.js"
+        "C:/Users/byrnes/Documents/GitHub/comIssues/www/js/app.js",
+        "C:/Users/byrnes/Documents/GitHub/comIssues/gulpfile.js"
     ]
 }

@@ -32,7 +32,7 @@ $hmhorange:                       #fac42e !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-@import "ionic/scss/ionic";
+@import "./www/scss/ionic/scss/ionic";
 
 
 .bar-hmhorange{
