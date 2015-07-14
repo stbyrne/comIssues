@@ -1,17 +1,15 @@
 <ion-view>
-    <ion-nav-bar class="bar-energized">
-        <ion-nav-title>Find Us</ion-nav-title>
-        <ion-nav-buttons>
-            <div class="buttons">
-                <button class="button button-icon button-clear ion-drag" menu-toggle="left">
+    <ion-nav-buttons class="bar-hmhorange">
+        <div class="buttons">
+            <button class="button button-icon button-hmhdark ion-drag" menu-toggle="left">
             </button>
-                <button ng-click="centerOnMe()" class="button icon button-icon ion-ios7-paperplane-outline"></button>
-            </div>
-            <div class="item-button-right">
-                <a href="#/app/main" class="button icon button-icon">Home</a>
-            </div>
-        </ion-nav-buttons>
-    </ion-nav-bar>
+            <button ng-click="centerOnMe()" class="button icon button-icon ion-ios7-paperplane-outline"></button>
+        </div>
+        <h1 class="title">Find Us</h1>
+        <div class="buttons">
+            <a href="#/app/main" class="button icon button-icon">Home</a>
+        </div>
+    </ion-nav-buttons>
     
     <ion-content scroll="false">
       <map on-create="mapCreated(map)"></map>
