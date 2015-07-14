@@ -126,7 +126,7 @@ angular.module('starter.controllers', [])
         
         console.log(data);
         $scope.thinkcentral = [];
-        $scope.images = ['img/screen/1.png', 'img/screen/2.png'];
+        /*$scope.images = [];*/
         
         angular.forEach(data.feed.entry, function(value){
                 
@@ -137,10 +137,12 @@ angular.module('starter.controllers', [])
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
+                    imageDir = imagePath + index + '/',
+                    imageArray = [],
                     text = value["gsx$text"].$t;
             
             
-               this.push({thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text, });
+               this.push({index:index, imageDir:imageDir, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
             }, $scope.thinkcentral);
         
             console.log($scope.thinkcentral);
@@ -189,10 +191,11 @@ angular.module('starter.controllers', [])
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
+                    imageDir = imagePath + index + '/',
                     text = value["gsx$text"].$t;
             
                 
-               this.push({thumb:thumb, issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+               this.push({index:index, imageDir:imageDir, thumb:thumb, issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
             }, $scope.hmof);
         
             console.log($scope.hmof);
@@ -251,8 +254,10 @@ angular.module('starter.controllers', [])
     // Open the login modal
     $scope.showImage = function() {
         $scope.modal.show();
-        $ionicSlideBoxDelegate.update(500);
-        console.log($scope.images);
+        /*$timeout(function(){
+          $ionicSlideBoxDelegate.update();
+        }, 500);*/
+        console.log($scope.thinkcentral);
     };
     
 }])
