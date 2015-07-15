@@ -7021,7 +7021,7 @@ a.button {
   background-color: #ffc800;
   color: #f0f0f0; }
 
-.bar-hmhorange .button {
+.bar-hmhorange .button, .bar-hmhorange .nav-bar-title {
   color: #5c5c5c; }
 
 .item-hmhorange {

@@ -1,13 +1,10 @@
-<!--<ion-modal-view ng-init="images = getItem().images">-->
 <ion-modal-view ng-init="item = getItem()">
     <div class="buttons">
         <button class="button button-clear" ng-click="closeImage()">Close</button>
     </div>
-    <h1>{{item.imageDir[0]}}</h1>
     <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
-        <ion-slide ng-repeat="image in items" active="true" scrollbar-y="false">
-            <img ng-src="{{image}}" class="full-image" /> 
+        <ion-slide ng-repeat="image in item.imageArray" active="true" scrollbar-y="false">
+            <img ng-src="{{image}}" on-error-src="./img/logo.png" class="full-image" /> 
         </ion-slide>
     </ion-slide-box>
-    
 </ion-modal-view>
