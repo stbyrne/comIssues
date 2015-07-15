@@ -121,7 +121,7 @@ angular.module('starter.controllers', [])
     issuesThinkCentral.getIssues().success(function(data){
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
-    
+       
         console.log(imagePath);
         
         console.log(data);
@@ -141,12 +141,21 @@ angular.module('starter.controllers', [])
                     imageArray = [],
                     text = value["gsx$text"].$t;
             
+            /*Loop thru images in directory*/
+                        
+                for (i=1;i<6;i++){
+                    
+                    var url = imageDir + i + '.png';
+                    
+                    imageArray.push(url);
+                }
             
-               this.push({index:index, imageDir:imageDir, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+                console.log(imageArray);
+            
+                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
             }, $scope.thinkcentral);
         
             console.log($scope.thinkcentral);
-            console.log(typeof($scope.process));
         
 
             }).error(function(){
@@ -192,10 +201,21 @@ angular.module('starter.controllers', [])
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
                     imageDir = imagePath + index + '/',
+                    imageArray = [],
                     text = value["gsx$text"].$t;
             
-                
-               this.push({index:index, imageDir:imageDir, thumb:thumb, issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+            /*Loop thru images in directory*/
+                        
+                for (i=1;i<6;i++){
+                    
+                    var url = imageDir + i + '.png';
+                    
+                    imageArray.push(url);
+                }
+            
+                console.log(imageArray);
+            
+                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
             }, $scope.hmof);
         
             console.log($scope.hmof);
@@ -230,7 +250,7 @@ angular.module('starter.controllers', [])
         console.log(item);
         
         $scope.$parent.item = item;
-        $scope.$parent.images = item.images;
+        $scope.$parent.imageArray = item.imageArray;
         
     }
     $scope.getItem = function(){
