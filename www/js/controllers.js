@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
  return{
     getIssues : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/cells/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/basic?alt=json',
             method: 'GET'
         })
     }
@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
  return{
     getIssues : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/1huBXSUHO39y9WAFQagxoY8z3oiz1h9MFSc-Vx0hIXJE/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/cells/1huBXSUHO39y9WAFQagxoY8z3oiz1h9MFSc-Vx0hIXJE/od6/public/basic?alt=json',
             method: 'GET'
         })
     }
@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
  return{
     getData : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/1qaCiLfFs5zfrtsp0nyMmh00dqBizgxs6bYq9bdNQHRs/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/cells/1qaCiLfFs5zfrtsp0nyMmh00dqBizgxs6bYq9bdNQHRs/od6/public/basic?alt=json',
             method: 'GET'
         })
     }
@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
  return{
     getData : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/cells/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/values?alt=json',
             method: 'GET'
         })
     }
@@ -118,19 +118,22 @@ angular.module('starter.controllers', [])
     
     $scope.item = {};
    
-    issuesThinkCentral.getIssues().success(function(data){
+    issuesThinkCentral.getIssues().then(function(data){
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
        
         console.log(imagePath);
         
-        console.log(data);
+        console.log(data.data.feed.entry);
         $scope.thinkcentral = [];
         /*$scope.images = [];*/
         
-        angular.forEach(data.feed.entry, function(value){
+        angular.forEach(data.data.feed.entry, function(value){
+            
+            console.log(value["title"].$t.slice(0,1));
                 
-                var issue = value["gsx$issue"].$t,
+                var row = value["title"].$t.charAt(0), 
+                    issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
                     hint = value["gsx$hint"].$t,
@@ -140,6 +143,8 @@ angular.module('starter.controllers', [])
                     imageDir = imagePath + index + '/',
                     imageArray = [],
                     text = value["gsx$text"].$t;
+            
+            console.log(row);
             
             /*Loop thru images in directory*/
                         
@@ -158,7 +163,7 @@ angular.module('starter.controllers', [])
             console.log($scope.thinkcentral);
         
 
-            }).error(function(){
+            }, function(){
                 console.log('Couldnt find latest Issues'); 
                 $http.get('content/thinkcentral.json').success(function(data){
                     console.log(data);
@@ -220,7 +225,7 @@ angular.module('starter.controllers', [])
         
             console.log($scope.hmof);
 
-        }).error(function(){
+        }, function(){
             console.log('Couldnt find latest Issues'); 
             $http.get('content/hmof.json').success(function(data){
                 console.log(data);

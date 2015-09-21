@@ -1,9 +1,11 @@
 {
     "jscodehints.detectedExclusions": [
-        "C:/Users/byrnes/Documents/GitHub/comIssues/www/js/app.js",
-        "C:/Users/byrnes/Documents/GitHub/comIssues/gulpfile.js",
-        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic.min.js",
+        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic.bundle.js",
         "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic.js",
-        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic.bundle.min.js"
+        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic.min.js",
+        "C:/Users/byrnes/Documents/GitHub/comIssues/gulpfile.js",
+        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic.bundle.min.js",
+        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic-angular.min.js",
+        "C:/Users/byrnes/Documents/GitHub/comIssues/www/scss/ionic/js/ionic-angular.js"
     ]
 }
