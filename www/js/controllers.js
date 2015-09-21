@@ -5,19 +5,20 @@ angular.module('starter.controllers', [])
  return{
     getIssues : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/cells/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/basic?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/list/1M0sLk5iTye4pe_EyHtF5WadrK9S_h0xsiHY-uDGh2dc/od6/public/full?alt=json',
             method: 'GET'
         })
     }
  }
 })
 
+
 .factory('issuesHmof', function($http) {
     
  return{
     getIssues : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/cells/1huBXSUHO39y9WAFQagxoY8z3oiz1h9MFSc-Vx0hIXJE/od6/public/basic?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/list/1huBXSUHO39y9WAFQagxoY8z3oiz1h9MFSc-Vx0hIXJE/od6/public/full?alt=json',
             method: 'GET'
         })
     }
@@ -29,7 +30,7 @@ angular.module('starter.controllers', [])
  return{
     getData : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/cells/1qaCiLfFs5zfrtsp0nyMmh00dqBizgxs6bYq9bdNQHRs/od6/public/basic?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/list/1qaCiLfFs5zfrtsp0nyMmh00dqBizgxs6bYq9bdNQHRs/od6/public/full?alt=json',
             method: 'GET'
         })
     }
@@ -41,7 +42,7 @@ angular.module('starter.controllers', [])
  return{
     getData : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/cells/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/list/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/values?alt=json',
             method: 'GET'
         })
     }
@@ -117,23 +118,26 @@ angular.module('starter.controllers', [])
 .controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicLoading', '$ionicSlideBoxDelegate', 'issuesThinkCentral', 'issuesHmof', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
     
     $scope.item = {};
-   
+    
+    
+    $scope.thinkcentral = [];
+    
+    
     issuesThinkCentral.getIssues().then(function(data){
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
        
-        console.log(imagePath);
         
-        console.log(data.data.feed.entry);
-        $scope.thinkcentral = [];
+        console.log(data.data);
+        
         /*$scope.images = [];*/
         
         angular.forEach(data.data.feed.entry, function(value){
             
-            console.log(value["title"].$t.slice(0,1));
+            console.log(value);
+            
                 
-                var row = value["title"].$t.charAt(0), 
-                    issue = value["gsx$issue"].$t,
+                var issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
                     hint = value["gsx$hint"].$t,
@@ -144,10 +148,7 @@ angular.module('starter.controllers', [])
                     imageArray = [],
                     text = value["gsx$text"].$t;
             
-            console.log(row);
             
-            /*Loop thru images in directory*/
-                        
                 for (i=1;i<6;i++){
                     
                     var url = imageDir + i + '.png';
@@ -158,6 +159,7 @@ angular.module('starter.controllers', [])
                 console.log(imageArray);
             
                 this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+                    
             }, $scope.thinkcentral);
         
             console.log($scope.thinkcentral);
@@ -188,7 +190,7 @@ angular.module('starter.controllers', [])
                 });
             });
     
-    issuesHmof.getIssues().success(function(data){
+    issuesHmof.getIssues().then(function(data){
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfl9TcDlvVWdqSU5seE54WDZTX3ZTVHlNUVkyMl9RMXlBalNoVnJ4U3BuQ2M/';
         
@@ -196,7 +198,7 @@ angular.module('starter.controllers', [])
         $scope.hmof = [];
         /*$scope.images = [];*/
         
-        angular.forEach(data.feed.entry, function(value){
+        angular.forEach(data.data.feed.entry, function(value){
                 
                 var issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
@@ -294,17 +296,17 @@ angular.module('starter.controllers', [])
         });
     
     /*var url = 'content/team.json';*/
-    var url = 'https://spreadsheets.google.com/feeds/list/1X2Tspx4jG86kPw8QPeStiXh9vZS9YcFvDwNI2IAMWZs/od6/public/values?alt=json';
+    var url = 'https://spreadsheets.google.com/feeds/list/1X2Tspx4jG86kPw8QPeStiXh9vZS9YcFvDwNI2IAMWZs/od6/public/full?alt=json';
       
-      $http.get(url).success(function(data) {
+      $http.get(url).then(function(data) {
           
             $ionicLoading.hide();
           
-            $scope.team = data.feed.entry;
+            console.log(data);
           
             $scope.team = [];
           
-            angular.forEach(data.feed.entry, function(value){
+            angular.forEach(data.data.feed.entry, function(value){
                 
                 var id = value["gsx$id"].$t,
                     index = value["gsx$index"].$t,
@@ -320,10 +322,9 @@ angular.module('starter.controllers', [])
           
             console.log($scope.team);
           
-          
             $scope.contact = [];
           
-            angular.forEach(data.feed.entry, function(value){
+            angular.forEach(data.data.feed.entry, function(value){
                 
                 var email = value["gsx$email"].$t,
                     telwork = value["gsx$work"].$t,
@@ -335,7 +336,7 @@ angular.module('starter.controllers', [])
             
             console.log($scope.contact);
           
-            }).error(function(){
+            }, function(){
           
                 $ionicLoading.hide();
                 console.log('Error Loading 1st Json: Getting Local Json');
