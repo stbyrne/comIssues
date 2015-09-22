@@ -31,9 +31,9 @@ $hmhorange:                       #fac42e !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+$ionicons-font-path: "../scss/ionic/fonts" !default;
 
-@import "./www/scss/ionic/scss/ionic";
+@import "ionic/scss/ionic";
 
 
 .bar-hmhorange{
@@ -74,6 +74,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 p.item-hmhblue{
     background-color: $hmhblue;   
     color: $hmhwhite;   
+}
+.spiral-hmhorange svg{
+    
+  width: 40px;
+  height: 40px;
+  stroke: $hmhorange;
+  fill: $hmhorange;
 }
 
 

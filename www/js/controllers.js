@@ -42,7 +42,19 @@ angular.module('starter.controllers', [])
  return{
     getData : function() {
         return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/values?alt=json',
+            url: 'https://spreadsheets.google.com/feeds/list/1XDqeUYIH9B95cR7jDDNpvpPlOO7jgnl_Er1JkzLJth0/od6/public/full?alt=json',
+            method: 'GET'
+        })
+    }
+ }
+})
+
+.factory('teamdetails', function($http) {
+    
+ return{
+    getDetails : function() {
+        return $http({
+            url: 'https://spreadsheets.google.com/feeds/list/1STE7s9klnWQbK9UVztpwGXYlzhPwg5dPS5EROfnZ5GY/od6/public/full?alt=json',
             method: 'GET'
         })
     }
@@ -288,17 +300,19 @@ angular.module('starter.controllers', [])
     };
     
 }])
-.controller('TeamCtrl', function ($scope, $http, $ionicPopover, $ionicLoading) {
+.controller('TeamCtrl', function ($scope, $http, $ionicPopover, $ionicLoading, teamdetails) {
     
         $ionicLoading.show({
-            template: '<p>Updating some commoditys info</p><i class="icon ion-loading-c"></i>',
+            template: '<p>Updating some commoditys info</p><ion-spinner icon="spiral" class="spiral-hmhorange"></ion-spinner>',
             showBackdrop: true
         });
     
     /*var url = 'content/team.json';*/
-    var url = 'https://spreadsheets.google.com/feeds/list/1X2Tspx4jG86kPw8QPeStiXh9vZS9YcFvDwNI2IAMWZs/od6/public/full?alt=json';
+    /*var url = 'https://spreadsheets.google.com/feeds/list/1STE7s9klnWQbK9UVztpwGXYlzhPwg5dPS5EROfnZ5GY/od6/public/full?alt=json';*/
       
-      $http.get(url).then(function(data) {
+      /*$http.get(url).then(function(data) {*/
+    
+    teamdetails.getDetails().then(function(data){
           
             $ionicLoading.hide();
           
@@ -338,7 +352,7 @@ angular.module('starter.controllers', [])
           
             }, function(){
           
-                $ionicLoading.hide();
+                /*$ionicLoading.hide();*/
                 console.log('Error Loading 1st Json: Getting Local Json');
                 
           
@@ -483,7 +497,7 @@ angular.module('starter.controllers', [])
     }
 
     $ionicLoading.show({
-        template: '<p>Lets find your current location</p><i class="icon ion-loading-c"></i>',
+        template: '<p>Lets find your current location</p><ion-spinner icon="spiral" class="spiral-hmhorange"></ion-spinner>',
         showBackdrop: true
     });
 

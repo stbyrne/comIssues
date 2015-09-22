@@ -21,11 +21,11 @@
         <div class="card" ng-repeat="detail in loginData | filter:searchDetails">
             <!--<div class="item">-->
                 <!--<img src={{detail.avatar}}>-->
-                <h2 class="item item-hmhdark item-divider">{{detail.description}}</h2>
-                <div class="item item-text-wrap">{{detail.environment}}
-                <p class="item-hmhblue">URL</p><p>{{detail.url}}</p>
-                <p class="item-hmhblue">Username</p><p>{{detail.username}}</p>
-                <p class="item-hmhblue">Password</p><p>{{detail.password}}</p>
+                <h2 class="item item-hmhdark item-divider">{{detail.description}}: {{detail.environment}}</h2>
+                <div class="item">
+                <h3>URL</h3><p>{{detail.url}}</p>
+                <h3>Username</h3><p>{{detail.username}}</p>
+                <h3>Password</h3><p>{{detail.password}}</p>
                 </div>
                 <!--<div class="item-button-right">
                     <button class="button button-icon ion-ios7-keypad-outline" ng-init="num=$index" ng-click="teamPopover.show($event);setContact(num)"> 
