@@ -303,7 +303,7 @@ angular.module('starter.controllers', [])
 .controller('TeamCtrl', function ($scope, $http, $ionicPopover, $ionicLoading, teamdetails) {
     
         $ionicLoading.show({
-            template: '<p>Updating some commoditys info</p><ion-spinner icon="spiral" class="spiral-hmhorange"></ion-spinner>',
+            template: '<p>Updating some commoditys info</p><ion-spinner icon="spiral" class="spinner-hmhorange"></ion-spinner>',
             showBackdrop: true
         });
     
