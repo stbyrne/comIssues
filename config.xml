@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.comissues458679" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>comIssues</name>
+<widget id="com.hmh.cdg.comm" 
+        version="0.1" 
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    
+  <name>HMH Commodity Team App</name>
+    
   <description>
-        An Ionic Framework and Cordova project.
+        HMH commodity specific processes and documentation
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="strtbyrne@gmail.com">
+      Stuart Byrne
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -13,6 +18,8 @@
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
+  <preference name="phonegap-version"           value="3.7.0" />          <!-- all: current version of PhoneGap -->
+  <preference name="orientation"                value="portrait" /> 
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
