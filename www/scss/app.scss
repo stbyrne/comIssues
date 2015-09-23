@@ -5,7 +5,8 @@ $hmhorange:                          #ffc800;
 $hmhlight:                           #eaeaea;
 $hmhdark:                            #393939;
 $hmhwhite:                           #f0f0f0;
-$hmhblue:                            #55bdff;
+$hmhblue:                            rgb(210, 237, 255);
+$hmhbluefade:                        rgba(210, 237, 255, .7);
 $hmhdarkfade:                        rgba(50, 50, 50, .6);
 
 //--------------------------------
@@ -55,12 +56,15 @@ $ionicons-font-path: "../scss/ionic/fonts" !default;
     background-color: $hmhdark;   
     color: $hmhwhite;   
 }
+.item-hmhblue{
+    background-color: $hmhblue;   
+}
 
 .escalation .icon{
     font-size: 20px;
 }
 .icon.green{
-    color: #00bc36;
+    color: #00bc46;
 }
 .icon.amber{
     color: #ffa700;
@@ -75,12 +79,20 @@ p.item-hmhblue{
     background-color: $hmhblue;   
     color: $hmhwhite;   
 }
-.spiral-hmhorange svg{
+.loading-container{
+    background-color: $hmhbluefade;   
+}
+.loading p{
+    font-size: 18px;
+    /*font-weight: 200;*/
+    /*color: $hmhorange;*/   
+}
+.loading svg{
     
   width: 40px;
   height: 40px;
-  stroke: $hmhorange;
-  fill: $hmhorange;
+  stroke: $hmhwhite;
+  fill: $hmhwhite;
 }
 
 

@@ -127,15 +127,20 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('IssuesListCtrl', ['$scope', '$http', '$ionicModal', '$timeout', '$ionicLoading', '$ionicSlideBoxDelegate', 'issuesThinkCentral', 'issuesHmof', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
+.controller('IssuesListCtrl', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
+    
+    $ionicLoading.show({
+            template: '<p>Just getting the latest logins</p><ion-spinner icon="spiral"></ion-spinner>',
+            showBackdrop: true
+        });
     
     $scope.item = {};
     
-    
     $scope.thinkcentral = [];
     
-    
     issuesThinkCentral.getIssues().then(function(data){
+        
+        $ionicLoading.hide();
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
        
@@ -179,12 +184,13 @@ angular.module('starter.controllers', [])
 
             }, function(){
                 console.log('Couldnt find latest Issues'); 
-                $http.get('content/thinkcentral.json').success(function(data){
-                    console.log(data);
+                $http.get('content/thinkcentral.json').then(function(data){
+                $ionicLoading.hide();
+                console.log(data);
                 $scope.thinkcentral = [];
                 /*$scope.images = [];*/
 
-                angular.forEach(data.feed.entry, function(value){
+                angular.forEach(data.data.feed.entry, function(value){
 
                         var issue = value["gsx$issue"].$t,
                             cause = value["gsx$cause"].$t,
@@ -203,6 +209,8 @@ angular.module('starter.controllers', [])
             });
     
     issuesHmof.getIssues().then(function(data){
+        
+        $ionicLoading.hide();
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfl9TcDlvVWdqSU5seE54WDZTX3ZTVHlNUVkyMl9RMXlBalNoVnJ4U3BuQ2M/';
         
@@ -240,13 +248,18 @@ angular.module('starter.controllers', [])
             console.log($scope.hmof);
 
         }, function(){
+        
             console.log('Couldnt find latest Issues'); 
-            $http.get('content/hmof.json').success(function(data){
-                console.log(data);
+            $http.get('content/hmof.json').then(function(data){
+                
+            $ionicLoading.hide();
+
+            console.log(data);
+
             $scope.hmof = [];
             /*$scope.images = [];*/
 
-            angular.forEach(data.feed.entry, function(value){
+            angular.forEach(data.data.feed.entry, function(value){
 
                     var issue = value["gsx$issue"].$t,
                         cause = value["gsx$cause"].$t,
@@ -299,11 +312,11 @@ angular.module('starter.controllers', [])
         console.log($scope.thinkcentral);
     };
     
-}])
+})
 .controller('TeamCtrl', function ($scope, $http, $ionicPopover, $ionicLoading, teamdetails) {
     
         $ionicLoading.show({
-            template: '<p>Updating some commoditys info</p><ion-spinner icon="spiral" class="spinner-hmhorange"></ion-spinner>',
+            template: '<p>Updating some commoditys info</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
         });
     
@@ -412,13 +425,18 @@ angular.module('starter.controllers', [])
 
 .controller('LoginsCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'regularLogins', function($scope, $http, $timeout, $ionicLoading, regularLogins) {
     
-    regularLogins.getData().success(function(data){
+    $ionicLoading.show({
+            template: '<p>Just getting the latest logins</p><ion-spinner icon="spiral"></ion-spinner>',
+            showBackdrop: true
+        });
+    
+    regularLogins.getData().then(function(data){
         
-        
+        $ionicLoading.hide();
         console.log(data);
         $scope.loginData = [];
         
-        angular.forEach(data.feed.entry, function(value){
+        angular.forEach(data.data.feed.entry, function(value){
                 
                 var description = value["gsx$description"].$t,
                     environment = value["gsx$environment"].$t,
@@ -433,7 +451,7 @@ angular.module('starter.controllers', [])
         
             console.log($scope.loginData);
 
-        }).error(function(){
+        }, function(){
             
         });
 
@@ -441,13 +459,18 @@ angular.module('starter.controllers', [])
 
 .controller('EscalationCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'escalations', function($scope, $http, $timeout, $ionicLoading, escalations) {
     
-    escalations.getData().success(function(data){
+    $ionicLoading.show({
+            template: '<p>Just getting the updated escalation data</p><ion-spinner icon="spiral" class="spiral-hmhorange"></ion-spinner>',
+            showBackdrop: true
+        });
+    
+    escalations.getData().then(function(data){
         
-        
+        $ionicLoading.hide();
         console.log(data);
         $scope.loginData = [];
         
-        angular.forEach(data.feed.entry, function(value){
+        angular.forEach(data.data.feed.entry, function(value){
                 
                 var platform = value["gsx$platform"].$t,
                     environment = value["gsx$environment"].$t,
@@ -462,7 +485,7 @@ angular.module('starter.controllers', [])
         
             console.log($scope.loginData);
 
-        }).error(function(){
+        }, function(){
             
         });
 
