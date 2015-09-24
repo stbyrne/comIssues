@@ -2,12 +2,15 @@
 // -------------------------------
 
 $hmhorange:                          #ffc800;
-$hmhlight:                           #eaeaea;
+$hmhlight:                           #f0f0f0;
 $hmhdark:                            #393939;
-$hmhwhite:                           #f0f0f0;
-$hmhblue:                            rgb(210, 237, 255);
+$hmhgrey:                            #868686;
+$hmhwhite:                           #fafafa;
+$hmhblue:                            rgba(210, 234, 255, 0.4);
 $hmhbluefade:                        rgba(210, 237, 255, .7);
 $hmhdarkfade:                        rgba(50, 50, 50, .6);
+$hmhvibrantto:                       rgba(21, 164, 170, 0.5);
+$hmhvibrantfrom:                     rgba(127, 227, 173, 0.5);
 
 //--------------------------------
 
@@ -44,6 +47,9 @@ $ionicons-font-path: "../scss/ionic/fonts" !default;
 .bar-hmhorange .button, .bar-hmhorange .nav-bar-title{
     color: $hmhdark;   
 }
+.bar .title, .bar .button{
+    font-weight: 300;   
+}
 .item-hmhorange{
     background-color: $hmhorange;   
     color: $hmhdark;   
@@ -52,12 +58,19 @@ $ionicons-font-path: "../scss/ionic/fonts" !default;
     background-color: $hmhlight;   
     color: $hmhdark;   
 }
+.item-hmhgrey{
+    background-color: $hmhgrey;   
+    color: $hmhwhite;   
+}
 .item-hmhdark{
     background-color: $hmhdark;   
     color: $hmhwhite;   
 }
 .item-hmhblue{
     background-color: $hmhblue;   
+}
+.item-hmhvibrant{
+    background: linear-gradient(135deg, $hmhvibrantfrom 0%,$hmhvibrantto 100%); 
 }
 
 .escalation .icon{

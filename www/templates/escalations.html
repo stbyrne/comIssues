@@ -10,16 +10,15 @@
         </div>
     </ion-nav-buttons>
     <ion-content>
-        <div class="item item-input issue-search">
+        <div class="item item-hmhvibrant item-input issue-search">
             <i class="icon ion-search placeholder-icon"></i>
             <input type="search" placeholder="Search" ng-model="searchDetails">
             <button ng-if="searchDetails.length" class="icon button-icon ion-ios7-close-outline" ng-click="$parent.searchDetails=''">
             </button>
         </div>
        
-        
         <div class="card" ng-repeat="detail in loginData | filter:searchDetails">
-            <h2 class="item item-hmhdark item-divider">{{detail.platform}}</h2>
+            <h2 class="item item-hmhgrey item-divider">{{detail.platform}}</h2>
             <h2 class="item item-hmhorange item-divider">{{detail.environment}}</h2>
             <div class="item item-hmhlight tabs tabs-secondary tabs-icon-left escalation">
                 <p class="tab-item"><span class="icon green">1</span>Initial Action</p>

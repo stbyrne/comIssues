@@ -309,7 +309,7 @@ angular.module('starter.controllers', [])
         /*$timeout(function(){
           $ionicSlideBoxDelegate.update();
         }, 500);*/
-        console.log($scope.thinkcentral);
+       
     };
     
 })
@@ -460,7 +460,7 @@ angular.module('starter.controllers', [])
 .controller('EscalationCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'escalations', function($scope, $http, $timeout, $ionicLoading, escalations) {
     
     $ionicLoading.show({
-            template: '<p>Just getting the updated escalation data</p><ion-spinner icon="spiral" class="spiral-hmhorange"></ion-spinner>',
+            template: '<p>Just getting the updated escalation data</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
         });
     
@@ -492,7 +492,16 @@ angular.module('starter.controllers', [])
 }])
 
 .controller('MapCtrl', function($scope, $ionicLoading) {
-  $scope.mapCreated = function(map) {
+    
+    /*$ionicLoading.show({
+            template: '<p>Lets see where you are</p><ion-spinner icon="spiral"></ion-spinner>',
+            showBackdrop: true
+        });*/
+    
+    console.log("Preparing function");
+    
+    $scope.mapCreated = function(map) {
+           
     $scope.map = map;
       
     var hmhloc = new google.maps.LatLng(53.343337, -6.246892);
@@ -503,12 +512,13 @@ angular.module('starter.controllers', [])
             position: hmhloc,
             map: $scope.map,
             icon: hmhOffices,
-            title: "PFA Ireland Offices"
+            title: "HMH Dublin Offices"
     });
       
-    $scope.map.setZoom(10);
+    $scope.map.setZoom(12);
       
     $scope.map.setCenter(hmhloc);
+     
   };
     
     var defaultLatLng = new google.maps.LatLng(53.343337, -6.246892); 
@@ -519,12 +529,7 @@ angular.module('starter.controllers', [])
       return;
     }
 
-    $ionicLoading.show({
-        template: '<p>Lets find your current location</p><ion-spinner icon="spiral" class="spiral-hmhorange"></ion-spinner>',
-        showBackdrop: true
-    });
-
-    navigator.geolocation.getCurrentPosition(function (pos) {
+        navigator.geolocation.getCurrentPosition(function (pos) {
         
         console.log('Got pos', pos);
         var loc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
@@ -552,7 +557,7 @@ angular.module('starter.controllers', [])
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var hmhOffices = 'images/loc.svg';
+        var hmhOffices = 'img/loc.svg';
         var marker;
         marker.setMap(null);
         marker = new google.maps.Marker({
@@ -560,14 +565,14 @@ angular.module('starter.controllers', [])
             map: map,
             title: "You are here!"
         });
-        var marker2;
+        /*var marker2;
         marker2.setMap(null);
         marker2 = new google.maps.Marker({
             position: defaultLatLng,
             map: map,
             icon: hmhOffices,
             title: "PFA Ireland Offices"
-        });
+        });*/
         
     }
     
