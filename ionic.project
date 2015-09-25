@@ -1,6 +1,6 @@
 {
   "name": "commIssues",
-  "app_id": "",
+  "app_id": "344c7e24",
   "gulpStartupTasks": [
     "sass",
     "watch"

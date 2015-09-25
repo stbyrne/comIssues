@@ -160,12 +160,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/main');
-})
-.config( [
+});
+/*.config( [
     '$compileProvider',
     function( $compileProvider )
     {   
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|mailto|skype|chrome-extension):/);
         // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     }
-]);
+]);*/
