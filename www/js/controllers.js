@@ -130,7 +130,7 @@ angular.module('starter.controllers', [])
 .controller('IssuesListCtrl', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
     
     $ionicLoading.show({
-            template: '<p>Just getting the latest logins</p><ion-spinner icon="spiral"></ion-spinner>',
+            template: '<p>Just getting the latest issues</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
         });
     
@@ -144,7 +144,6 @@ angular.module('starter.controllers', [])
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
        
-        
         console.log(data.data);
         
         /*$scope.images = [];*/
@@ -460,7 +459,7 @@ angular.module('starter.controllers', [])
 .controller('EscalationCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'escalations', function($scope, $http, $timeout, $ionicLoading, escalations) {
     
     $ionicLoading.show({
-            template: '<p>Just getting the updated escalation data</p><ion-spinner icon="spiral"></ion-spinner>',
+            template: '<p>Lets update the latest escalation data</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
         });
     

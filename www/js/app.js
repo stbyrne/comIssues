@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     
-    $ionicConfigProvider.backButton.previousTitleText(false).text('');
+  $ionicConfigProvider.backButton.previousTitleText(false).text('');
     
   $stateProvider
 
@@ -165,7 +165,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
     '$compileProvider',
     function( $compileProvider )
     {   
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|mailto|skype|chrome-extension):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|https|mailto|skype|chrome-extension):/);
         // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     }
 ]);*/
