@@ -140,8 +140,6 @@ angular.module('starter.controllers', [])
     
     issuesThinkCentral.getIssues().then(function(data){
         
-        $ionicLoading.hide();
-        
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfmtfWGJzU0N1d1ZwRzVfckNiMjJCYnpJeFU5akE2SHEtcEhudjJKQm9iNlU/';
        
         console.log(data.data);
@@ -179,12 +177,13 @@ angular.module('starter.controllers', [])
             }, $scope.thinkcentral);
         
             console.log($scope.thinkcentral);
-        
 
+            $ionicLoading.hide();
+        
             }, function(){
                 console.log('Couldnt find latest Issues'); 
                 $http.get('content/thinkcentral.json').then(function(data){
-                $ionicLoading.hide();
+
                 console.log(data);
                 $scope.thinkcentral = [];
                 /*$scope.images = [];*/
@@ -204,12 +203,13 @@ angular.module('starter.controllers', [])
                     }, $scope.thinkcentral);
 
                     console.log($scope.thinkcentral); 
+
+                    $ionicLoading.hide();
                 });
             });
     
     issuesHmof.getIssues().then(function(data){
         
-        $ionicLoading.hide();
         
         var imagePath = 'https://googledrive.com/host/0B0778NZ3pAKKfl9TcDlvVWdqSU5seE54WDZTX3ZTVHlNUVkyMl9RMXlBalNoVnJ4U3BuQ2M/';
         
@@ -246,13 +246,13 @@ angular.module('starter.controllers', [])
         
             console.log($scope.hmof);
 
+            $ionicLoading.hide();
+
         }, function(){
         
             console.log('Couldnt find latest Issues'); 
             $http.get('content/hmof.json').then(function(data){
                 
-            $ionicLoading.hide();
-
             console.log(data);
 
             $scope.hmof = [];
@@ -273,6 +273,8 @@ angular.module('starter.controllers', [])
                 }, $scope.hmof);
 
                 console.log($scope.hmof);
+
+                $ionicLoading.hide();
             });
         });
     
@@ -319,14 +321,7 @@ angular.module('starter.controllers', [])
             showBackdrop: true
         });
     
-    /*var url = 'content/team.json';*/
-    /*var url = 'https://spreadsheets.google.com/feeds/list/1STE7s9klnWQbK9UVztpwGXYlzhPwg5dPS5EROfnZ5GY/od6/public/full?alt=json';*/
-      
-      /*$http.get(url).then(function(data) {*/
-    
-    teamdetails.getDetails().then(function(data){
-          
-            $ionicLoading.hide();
+        teamdetails.getDetails().then(function(data){
           
             console.log(data);
           
@@ -361,10 +356,11 @@ angular.module('starter.controllers', [])
             }, $scope.contact);
             
             console.log($scope.contact);
+
+            $ionicLoading.hide();
           
             }, function(){
           
-                /*$ionicLoading.hide();*/
                 console.log('Error Loading 1st Json: Getting Local Json');
                 
           
@@ -378,6 +374,7 @@ angular.module('starter.controllers', [])
                        this.push(value["contact"]);
                     }, $scope.contact);
 
+                    $ionicLoading.hide();
 
                 })
       })
@@ -431,7 +428,6 @@ angular.module('starter.controllers', [])
     
     regularLogins.getData().then(function(data){
         
-        $ionicLoading.hide();
         console.log(data);
         $scope.loginData = [];
         
@@ -450,6 +446,8 @@ angular.module('starter.controllers', [])
         
             console.log($scope.loginData);
 
+            $ionicLoading.hide();
+
         }, function(){
             
         });
@@ -465,7 +463,6 @@ angular.module('starter.controllers', [])
     
     escalations.getData().then(function(data){
         
-        $ionicLoading.hide();
         console.log(data);
         $scope.loginData = [];
         
@@ -484,20 +481,20 @@ angular.module('starter.controllers', [])
         
             console.log($scope.loginData);
 
+            $ionicLoading.hide();
+
         }, function(){
             
         });
 
 }])
 
-.controller('MapCtrl', function($scope, $ionicLoading) {
+.controller('MapCtrl', function($scope, $ionicLoading, $timeout) {
     
-    /*$ionicLoading.show({
+    $ionicLoading.show({
             template: '<p>Lets see where you are</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
-        });*/
-    
-    console.log("Preparing function");
+        });
     
     $scope.mapCreated = function(map) {
            
@@ -517,6 +514,14 @@ angular.module('starter.controllers', [])
     $scope.map.setZoom(12);
       
     $scope.map.setCenter(hmhloc);
+
+    $timeout(function(){
+
+    $ionicLoading.hide();
+
+    }, 1000);
+
+    /*$ionicLoading.hide();*/
      
   };
     
