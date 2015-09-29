@@ -105,7 +105,7 @@ p.item-hmhblue{
   stroke: $hmhwhite;
   fill: $hmhwhite;
 }
-/* .backdrop{
+ .backdrop{
     background-image: url('../img/main/hmh.png');
     -webkit-background-size: cover; 
     -moz-background-size: cover; 
@@ -118,11 +118,11 @@ p.item-hmhblue{
 
    0%   { -webkit-filter: blur(10px);}
    
-  50%   { -webkit-filter: blur(10px);}
-  /
+  40%   { -webkit-filter: blur(10px);}
+
  100%   { -webkit-filter: blur(0px);}
  
-} */
+} 
 
 .bar-light{
     background-color: transparent;
