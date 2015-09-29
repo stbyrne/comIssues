@@ -132,7 +132,7 @@ angular.module('starter.controllers', [])
     $ionicLoading.show({
             template: '<p>Just getting the latest issues</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
-        });
+    });
     
     $scope.item = {};
     

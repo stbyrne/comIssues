@@ -9343,3 +9343,8 @@ p.item-hmhblue {
   height: 40px;
   stroke: #fafafa;
   fill: #fafafa; }
+
+.bar-light {
+  background-color: transparent;
+  border: none;
+  border-width: 0; }
