@@ -61,7 +61,13 @@ angular.module('starter.controllers', [])
  }
 })
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover, $ionicLoading) {
+
+  $ionicLoading.show({
+            template: '<p class="main-loader">HMH Commodity Team</p><ion-spinner icon="spiral"></ion-spinner>',
+            showBackdrop: true
+    });
+
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -106,7 +112,6 @@ angular.module('starter.controllers', [])
     $scope.popover = popover;
   });
 
-
   $scope.openPopover = function($event) {
     $scope.popover.show($event);
   };
@@ -125,6 +130,13 @@ angular.module('starter.controllers', [])
   $scope.$on('popover.removed', function() {
     // Execute action
   });
+  $timeout(function(){
+
+    $ionicLoading.hide();
+
+  }, 3000)
+
+  /*$ionicLoading.hide();*/
 })
 
 .controller('IssuesListCtrl', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {

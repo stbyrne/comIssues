@@ -105,11 +105,209 @@ p.item-hmhblue{
   stroke: $hmhwhite;
   fill: $hmhwhite;
 }
+/* .backdrop{
+    background-image: url('../img/main/hmh.png');
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    -webkit-animation: fadein linear 3.5s;
+}
+
+@-webkit-keyframes fadein {
+
+   0%   { -webkit-filter: blur(10px);}
+   
+  50%   { -webkit-filter: blur(10px);}
+  /
+ 100%   { -webkit-filter: blur(0px);}
+ 
+} */
 
 .bar-light{
     background-color: transparent;
     border: none;
     border-width: 0;
+}
+.main{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/main/hmh.png');
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover; 
+}
+.contact-list{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    /*border-top: 2px solid rgb(60,60,60);*/
+    /*padding: 40px 0;*/
+}
+
+.contact-list .list .item{
+    background-color: transparent;
+    border: none;
+    border-top: 2px solid #bbb;
+}
+.contact-list .list .item .item-content{
+    background-color: rgba(60, 60, 60, 0.4);
+    padding: 10px 100px 20px 20px;
+}
+.contact-list .list .item .item-content:active{
+    background-color: rgba(255,255,255, 0.6);
+}
+.contact-list .list .item .item-content h4{
+    font-size: 2em;
+    font-weight: 100;
+    color: rgb(255,255,255);
+    border-bottom: 5px solid rgb(255, 170, 0);
+}
+.contact-list .list .item .item-content:active h4{
+    color: rgb(40,40,40);
+}
+.contact-list .list .item .item-content p{
+    font-size: .8em;
+    font-weight: 200;
+    color: rgb(255,255,255);
+    
+}
+.contact-list .list .item .item-content:active p{
+    color: rgb(40,40,40);
+}
+.contact-list .list .item .item-content{
+    background-color: rgba(60, 60, 60, 0.4);
+    padding: 3% 25% 3% 5%;
+}
+.contact-list .list .item-divider{
+    background-color: rgba(255, 170, 0, 0.5);
+    border: none;
+    padding: 5% 20% 5%;
+    text-align: center;
+}
+.contact-list .list .item-divider h2{
+    color: #fff;
+    font-size: 2em;
+    font-weight: 100;
+}
+.contact-list .list .item-divider p{
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+.contact-list .list .item .item-content i{
+    color: rgb(255,255,255);
+    font-size: 40px;
+}
+.contact-list .list .item .item-content:active i{
+    color: rgb(255, 170, 0);
+}
+.contact{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/main/hmh_blur.png');
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover; /* version standardisée */
+}
+
+.issue-detail .list .item p{
+    margin-top: 0;   
+}
+
+.popover{
+    background-color: rgba(255,255,255, 0.9);
+    border: none;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px 0 15px 15px;
+    
+}
+/*.teamPopover{
+    background-color: rgba(60, 60, 60, 0.8);
+    border-radius: 0;
+    color: rgb(255, 170, 0);
+    text-align: left;
+    
+}*/
+.teamPopover .list .item, .teamPopover .list .item-content, .teamPopover .list .item p{
+    
+    background-color: transparent;
+    border: none;
+    color: rgb(30, 30, 30);
+    text-align: left;
+    font-size: 18px;
+    
+}
+.teamPopover .list .item, .teamPopover .list .item-content.activated p,.teamPopover .list .item-content.activated i{
+    
+    color: rgb(0, 128, 255);   
+}
+
+.bar-light{
+    background-color: transparent;
+    border: none;
+    border-width: 0;
+    
+}
+.bar.bar-light{
+    background-color: transparent;
+    border: none;
+}
+
+map {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.scroll {
+    height: 100%;
+}
+
+/* Loader customization */
+.loading {
+    background-color: rgba(0,0,0,0)!important;
+}
+i.icon.ion-loading-c {
+    color: rgb(255, 170, 0);
+    zoom: 2;
+}
+
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  height: 100%;
+}
+.item-text-centre{
+    text-align: center;
+}
+.full-image{
+    width: 100%;
+    height: 100%;
+}
+.slider{
+    height: 100%;   
+}
+
+button.icon.button-icon.ion-ios7-close-outline {
+  position: absolute;
+  right: 0;
+  color: #bbb;
 }
 
 
