@@ -63,10 +63,10 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover, $ionicLoading) {
 
-  $ionicLoading.show({
+  /*$ionicLoading.show({
             template: '<p class="main-loader">HMH Commodity Team</p><ion-spinner icon="spiral"></ion-spinner>',
             showBackdrop: true
-    });
+    });*/
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -130,11 +130,11 @@ angular.module('starter.controllers', [])
   $scope.$on('popover.removed', function() {
     // Execute action
   });
-  $timeout(function(){
+  /*$timeout(function(){
 
     $ionicLoading.hide();
 
-  }, 3000)
+  }, 3000)*/
 
   /*$ionicLoading.hide();*/
 })
