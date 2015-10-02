@@ -166,7 +166,7 @@ angular.module('starter.controllers', [])
                 var issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
-                    hint = value["gsx$hint"].$t,
+                    component = value["gsx$component"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
@@ -184,11 +184,14 @@ angular.module('starter.controllers', [])
             
                 console.log(imageArray);
             
-                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, component:component, jira:jira, process:process, text:text});
                     
             }, $scope.thinkcentral);
         
-            console.log($scope.thinkcentral);
+            var tcObj = $scope.thinkcentral;
+        
+            localStorage.setItem('tcStorage', JSON.stringify(tcObj));
+
 
             $ionicLoading.hide();
         
@@ -204,14 +207,14 @@ angular.module('starter.controllers', [])
 
                         var issue = value["gsx$issue"].$t,
                             cause = value["gsx$cause"].$t,
-                            hint = value["gsx$hint"].$t,
+                            component = value["gsx$component"].$t,
                             jira = value["gsx$jira"].$t,
                             process = value["gsx$process"].$t,
                             thumb = value["gsx$thumb"].$t,
                             text = value["gsx$text"].$t;
 
 
-                       this.push({thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text, });
+                       this.push({thumb:thumb,issue:issue, cause:cause, component:component, jira:jira, process:process, text:text, });
                     }, $scope.thinkcentral);
 
                     console.log($scope.thinkcentral); 
@@ -234,7 +237,7 @@ angular.module('starter.controllers', [])
                 var issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
-                    hint = value["gsx$hint"].$t,
+                    component = value["gsx$component"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
@@ -253,7 +256,7 @@ angular.module('starter.controllers', [])
             
                 console.log(imageArray);
             
-                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, component:component, jira:jira, process:process, text:text});
             }, $scope.hmof);
         
             console.log($scope.hmof);
@@ -274,14 +277,14 @@ angular.module('starter.controllers', [])
 
                     var issue = value["gsx$issue"].$t,
                         cause = value["gsx$cause"].$t,
-                        hint = value["gsx$hint"].$t,
+                        component = value["gsx$component"].$t,
                         jira = value["gsx$jira"].$t,
                         process = value["gsx$process"].$t,
                         thumb = value["gsx$thumb"].$t,
                         text = value["gsx$text"].$t;
 
 
-                   this.push({thumb:thumb, issue:issue, cause:cause, hint:hint, jira:jira, process:process, text:text});
+                   this.push({thumb:thumb, issue:issue, cause:cause, component:component, jira:jira, process:process, text:text});
                 }, $scope.hmof);
 
                 console.log($scope.hmof);
