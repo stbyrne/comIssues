@@ -61,6 +61,18 @@ angular.module('starter.controllers', [])
  }
 })
 
+.factory('processDescriptions', function($http) {
+    
+ return{
+    getDesc : function() {
+        return $http({
+            url: 'https://spreadsheets.google.com/feeds/list/1t70gDzNhHqt3COOgvxG867dPCTLXVsLyExN5pj7jg_g/od6/public/full?alt=json',
+            method: 'GET'
+        })
+    }
+ }
+})
+
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover, $ionicLoading) {
 
   /*$ionicLoading.show({
@@ -99,7 +111,7 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
     
-     var template = '<ion-popover-view><ion-content><div class="list"><h2>Trinity Central</h2><p>152-160 Pearse Street</p><p>Dublin 2</p><p>Ireland</p></div></ion-content></ion-popover-view>';
+  var template = '<ion-popover-view><ion-content><div class="list"><h2>Trinity Central</h2><p>152-160 Pearse Street</p><p>Dublin 2</p><p>Ireland</p></div></ion-content></ion-popover-view>';
 
   $scope.popover = $ionicPopover.fromTemplate(template, {
     scope: $scope,
@@ -139,7 +151,7 @@ angular.module('starter.controllers', [])
   /*$ionicLoading.hide();*/
 })
 
-.controller('IssuesListCtrl', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof) {
+.controller('IssuesListCtrl', function($scope, $http, $ionicModal, $ionicSlideBoxDelegate, $timeout, $ionicLoading, issuesThinkCentral, issuesHmof, processDescriptions) {
     
     $ionicLoading.show({
             template: '<p>Just getting the latest issues</p><ion-spinner icon="spiral"></ion-spinner>',
@@ -192,35 +204,13 @@ angular.module('starter.controllers', [])
         
             localStorage.setItem('tcStorage', JSON.stringify(tcObj));
 
-
             $ionicLoading.hide();
         
             }, function(){
-                console.log('Couldnt find latest Issues'); 
-                $http.get('content/thinkcentral.json').then(function(data){
-
-                console.log(data);
-                $scope.thinkcentral = [];
-                /*$scope.images = [];*/
-
-                angular.forEach(data.data.feed.entry, function(value){
-
-                        var issue = value["gsx$issue"].$t,
-                            cause = value["gsx$cause"].$t,
-                            component = value["gsx$component"].$t,
-                            jira = value["gsx$jira"].$t,
-                            process = value["gsx$process"].$t,
-                            thumb = value["gsx$thumb"].$t,
-                            text = value["gsx$text"].$t;
-
-
-                       this.push({thumb:thumb,issue:issue, cause:cause, component:component, jira:jira, process:process, text:text, });
-                    }, $scope.thinkcentral);
-
-                    console.log($scope.thinkcentral); 
-
-                    $ionicLoading.hide();
-                });
+                console.log('Couldnt find latest Issues');
+                alert('Oops cant get the latest issues from ThinkCentral at the moment. You can still view saved issues in storage.');
+                $scope.thinkcentral = JSON.parse(localStorage.getItem('tcStorage')); 
+                $ionicLoading.hide();
             });
     
     issuesHmof.getIssues().then(function(data){
@@ -260,38 +250,19 @@ angular.module('starter.controllers', [])
             }, $scope.hmof);
         
             console.log($scope.hmof);
+            var hmofObj = $scope.hmof;
+        
+            localStorage.setItem('hmofStorage', JSON.stringify(hmofObj));
 
             $ionicLoading.hide();
-
-        }, function(){
         
-            console.log('Couldnt find latest Issues'); 
-            $http.get('content/hmof.json').then(function(data){
-                
-            console.log(data);
-
-            $scope.hmof = [];
-            /*$scope.images = [];*/
-
-            angular.forEach(data.data.feed.entry, function(value){
-
-                    var issue = value["gsx$issue"].$t,
-                        cause = value["gsx$cause"].$t,
-                        component = value["gsx$component"].$t,
-                        jira = value["gsx$jira"].$t,
-                        process = value["gsx$process"].$t,
-                        thumb = value["gsx$thumb"].$t,
-                        text = value["gsx$text"].$t;
-
-
-                   this.push({thumb:thumb, issue:issue, cause:cause, component:component, jira:jira, process:process, text:text});
-                }, $scope.hmof);
-
-                console.log($scope.hmof);
-
+          }, function(){
+                console.log('Couldnt find latest Issues');
+                alert('Oops cant get the latest issues from HMOF at the moment. You can still view saved issues in storage.');
+                $scope.hmof = JSON.parse(localStorage.getItem('hmofStorage')); 
                 $ionicLoading.hide();
-            });
-        });
+          });
+
     
     $scope.setItem = function(item){
         
@@ -305,23 +276,77 @@ angular.module('starter.controllers', [])
         return $scope.$parent.item;
         console.log('Test');
     }
-// Image Modal
+
+    // Handle data from Process Descriptions factory
+
+    processDescriptions.getDesc().then(function(data){
+
+        console.log(data);
+        $scope.process = [];
+        /*$scope.images = [];*/
+        
+        angular.forEach(data.data.feed.entry, function(value){
+                
+                var process = value["gsx$process"].$t,
+                    index = value["gsx$index"].$t,
+                    description = value["gsx$description"].$t;
+            
+                this.push({index:index, process:process, description:description});
+
+            }, $scope.process);
+        
+            console.log($scope.process);
+
+            $ionicLoading.hide();
+
+        }, function(){
+
+        console.log("Couldnt get Description Data");
+        $ionicLoading.hide();
+
+    })
+
+    // Image Modal
     
-    // Create the login modal that we will use later
+    // Create the Image modal 
     $ionicModal.fromTemplateUrl('templates/imageModal.html', {
     scope: $scope
     }).then(function(modal) {
     $scope.modal = modal;
     });
 
-    // Triggered in the login modal to close it
+    // Triggered in the Image modal to close it
     $scope.closeImage = function() {
     $scope.modal.hide();
     };
 
-    // Open the login modal
+    // Open the Image modal
     $scope.showImage = function() {
         $scope.modal.show();
+        /*$timeout(function(){
+          $ionicSlideBoxDelegate.update();
+        }, 500);*/
+       
+    };
+
+    // Description Modal
+    
+    // Create the Description modal 
+    $ionicModal.fromTemplateUrl('templates/descriptions.html', {
+    scope: $scope
+    }).then(function(modal) {
+    $scope.modalDesc = modal;
+    });
+
+    // Triggered in the Description modal to close it
+    $scope.closeDesc = function() {
+    $scope.modalDesc.hide();
+    };
+
+    // Open the Description modal
+    $scope.showDesc = function() {
+
+        $scope.modalDesc.show();
         /*$timeout(function(){
           $ionicSlideBoxDelegate.update();
         }, 500);*/

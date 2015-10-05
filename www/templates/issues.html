@@ -13,10 +13,14 @@
 
             <ion-item  class="item-divider item-hmhlight item-text-centre">Process</ion-item>
             
-              <ion-item href="#" class="item item-icon-right">
+              <ion-item class="item item-icon-right">
                 <p>{{item.process}}</p>
-                <i class="icon ion-ios-information-outline"></i>
+                <div class="item-button-right">
+                    <button class="button button-icon ion-ios-information-outline" ng-click="showDesc()"> 
+                    </button>
+                </div>
               </ion-item>
+
             
             
             <ion-item  class="item-divider item-hmhlight item-text-centre">Component</ion-item>

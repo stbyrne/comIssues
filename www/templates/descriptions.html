@@ -1,0 +1,14 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-hmhorange">
+    <h1 class="title">Process Descriptions</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeDesc()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list card" ng-repeat="item in process">
+      <ion-item  class="item-divider item-hmhlight item-text-centre">{{item.process}}</ion-item>
+      <ion-item class="item item-hmhblue item-body">{{item.description}}</ion-item>    
+    </div>
+  </ion-content>
+</ion-modal-view>
