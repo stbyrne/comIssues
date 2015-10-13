@@ -289,20 +289,26 @@ angular.module('starter.controllers', [])
                 
                 var process = value["gsx$process"].$t,
                     index = value["gsx$index"].$t,
-                    description = value["gsx$description"].$t;
+                    description = value["gsx$description"].$t,
+                    notes = value["gsx$notes"].$t;
             
-                this.push({index:index, process:process, description:description});
+                this.push({index:index, process:process, description:description, notes:notes});
 
             }, $scope.process);
         
             console.log($scope.process);
 
+            var processObj = $scope.process;
+        
+            localStorage.setItem('processStorage', JSON.stringify(processObj));
+
             $ionicLoading.hide();
 
         }, function(){
 
-        console.log("Couldnt get Description Data");
-        $ionicLoading.hide();
+                alert('Hmm Process Descriptions are not reachable at the moment.');
+                $scope.process = JSON.parse(localStorage.getItem('processStorage')); 
+                $ionicLoading.hide();
 
     })
 
