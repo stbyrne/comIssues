@@ -101,6 +101,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
         }
       }
     })*/
+    .state('app.process', {
+      url: "/process",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/descriptions.html",
+          controller: 'IssuesListCtrl'
+        }
+      }
+    })
     .state('app.issues', {
       url: "/issues",
       views: {
@@ -109,7 +118,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
           controller: 'IssuesListCtrl'
         }
       }
-  })
+    })
       .state('app.platform_tc', {
       url: "/thinkcentral",
       views: {
@@ -118,7 +127,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
           controller: 'IssuesListCtrl'
         }
       }
-  })
+    })
       .state('app.platform_hmof', {
       url: "/hmof",
       views: {
@@ -127,7 +136,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
           controller: 'IssuesListCtrl'
         }
       }
-  })
+    })
 
   .state('app.single', {
     url: "/issues/:issue",
