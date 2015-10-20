@@ -14,7 +14,7 @@
         <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
             <ion-slide ng-repeat="image in floorImageArray" active="true" scrollbar-y="false" ng-init="num=$index+2">
                 <ion-item class="floor_title item-text-centre">Floor {{num}}</ion-item>
-                <img ng-src="{{image}}" on-error-src="./img/logo.png" class="floor-image" /> 
+                <img ng-src="{{image}}" on-error-src="./img/logo.png" type="image/png" class="floor-image" /> 
             </ion-slide>
         </ion-slide-box>
     </ion-content>

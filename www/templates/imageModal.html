@@ -4,7 +4,7 @@
     </div>
     <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
         <ion-slide ng-repeat="image in item.imageArray" active="true" scrollbar-y="false">
-            <img ng-src="{{image}}" on-error-src="./img/logo.png" class="full-image" /> 
+            <img ng-src="{{image}}" on-error-src="./img/logo.png" type="image/png" class="full-image" /> 
         </ion-slide>
     </ion-slide-box>
 </ion-modal-view>
