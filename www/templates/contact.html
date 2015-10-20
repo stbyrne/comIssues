@@ -1,4 +1,4 @@
-<ion-view ng-controller="IssuesListCtrl">
+<ion-view>
     <ion-nav-bar class="bar-light">
         <ion-nav-buttons>
             <div class="buttons">
@@ -10,7 +10,7 @@
         </ion-nav-buttons>
     </ion-nav-bar>
 
-    <ion-pane class="contact">
+    <ion-content class="contact" scroll="false">
         <ion-list class="contact-list">
             
             <ion-item class="item-icon-right" href="#" ng-click="showDesc()">
@@ -18,14 +18,12 @@
                 <p>a description of some of our processes</p>
                 <i class="icon ion-ios7-telephone-outline contact-item"></i>
             </ion-item>
-            <ion-item class="item-icon-right" href="#">
+            <ion-item class="item-icon-right" href="#/app/floor">
                 <h4>Floor Map</h4>
                 <p>where can you find us</p>
                 <i class="icon ion-ios7-email-outline contact-item"></i>
             </ion-item>
             
         </ion-list>
-        
-    </ion-pane>
-
+    </ion-content>
 </ion-view>

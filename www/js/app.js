@@ -48,7 +48,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
     views: {
       'menuContent': {
         templateUrl: "templates/contact.html",
-        controller: 'AppCtrl'
+        controller: 'IssuesListCtrl'
+      }
+    }
+  })
+
+  .state('app.floor', {
+    url: "/floor",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/floor.html",
+        controller: 'ImageCtrl'
       }
     }
   })

@@ -5,7 +5,7 @@
       <button class="button button-clear" ng-click="closeDesc()">Close</button>
     </div>
   </ion-header-bar>
-  <ion-content>
+  <ion-content scroll="true">
     <div class="list card" ng-repeat="item in process">
       <ion-item  class="item item-hmhlight item-text-centre">{{item.process}}</ion-item>
       <ion-item class="item item-hmhblue item-body">{{item.description}}</ion-item>    

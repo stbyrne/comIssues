@@ -1,0 +1,22 @@
+<ion-view>
+    <ion-nav-bar class="bar-light">
+        <ion-nav-buttons>
+            <div class="buttons">
+                <a href="#/app/contact" class="button icon button-icon ion-ios-arrow-back"></a>
+            </div>
+            <div class="item-button-right">
+                <a class="button icon button-icon" href="#/app/main">Home</a>
+            </div>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content class="floor">
+        <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
+            <ion-slide ng-repeat="image in floorImageArray" active="true" scrollbar-y="false" ng-init="num=$index+2">
+                <ion-item class="floor_title item-text-centre">Floor {{num}}</ion-item>
+                <img ng-src="{{image}}" on-error-src="./img/logo.png" class="floor-image" /> 
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+
+</ion-view>

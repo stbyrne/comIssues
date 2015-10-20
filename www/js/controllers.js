@@ -73,6 +73,18 @@ angular.module('starter.controllers', [])
  }
 })
 
+/*.factory('floorImage', function($http) {
+    
+ return{
+    getImages : function() {
+        return $http({
+            url: 'https://spreadsheets.google.com/feeds/list/0B0778NZ3pAKKZFpYSHdWN1MtOG8/od6/public/full?alt=json',
+            method: 'GET'
+        })
+    }
+ }
+})*/
+
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover, $ionicLoading) {
 
   /*$ionicLoading.show({
@@ -193,6 +205,13 @@ angular.module('starter.controllers', [])
                     
                     imageArray.push(url);
                 }
+
+                /*for (i=1;i<4;i++){
+                    
+                    var url = floorImageDir + i + '.png';
+                    
+                    imageArray.push(url);
+                }*/
             
                 console.log(imageArray);
             
@@ -346,7 +365,9 @@ angular.module('starter.controllers', [])
 
     // Triggered in the Description modal to close it
     $scope.closeDesc = function() {
-    $scope.modalDesc.hide();
+      $timeout(function(){
+          $scope.modalDesc.hide();
+        }, 500);
     };
 
     // Open the Description modal
@@ -520,8 +541,7 @@ angular.module('starter.controllers', [])
                     action = value["gsx$action"].$t,
                     escalation = value["gsx$escalation"].$t,
                     notes = value["gsx$notes"].$t;
-            
-                
+                            
                this.push({platform:platform, environment:environment, initial:initial, action:action, escalation:escalation, notes:notes});
             }, $scope.loginData);
         
@@ -534,6 +554,27 @@ angular.module('starter.controllers', [])
         });
 
 }])
+
+.controller('ImageCtrl', function($scope, $ionicLoading, $timeout, $http) {
+
+  $scope.allowSideMenu = false;
+
+  var floorImageDir = "https://googledrive.com/host/0B0778NZ3pAKKZFpYSHdWN1MtOG8/";
+
+  $scope.floorImageArray = [];
+
+  for (i=1;i<4;i++){
+                    
+    var imageUrl = floorImageDir + i + '.png';
+                    
+    $scope.floorImageArray.push(imageUrl);
+  }
+
+  console.log("Floor Image Object: " + $scope.floorImageArray);
+
+
+
+})
 
 .controller('MapCtrl', function($scope, $ionicLoading, $timeout) {
     
