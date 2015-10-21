@@ -73,18 +73,6 @@ angular.module('starter.controllers', [])
  }
 })
 
-/*.factory('floorImage', function($http) {
-    
- return{
-    getImages : function() {
-        return $http({
-            url: 'https://spreadsheets.google.com/feeds/list/0B0778NZ3pAKKZFpYSHdWN1MtOG8/od6/public/full?alt=json',
-            method: 'GET'
-        })
-    }
- }
-})*/
-
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover, $ionicLoading) {
 
   /*$ionicLoading.show({
@@ -565,7 +553,7 @@ angular.module('starter.controllers', [])
 
   for (i=1;i<4;i++){
                     
-    var imageUrl = floorImageDir + i + '.png';
+    var imageUrl = floorImageDir + i + '.svg';
                     
     $scope.floorImageArray.push(imageUrl);
   }

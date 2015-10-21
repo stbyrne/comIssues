@@ -6,8 +6,15 @@
     </div>
   </ion-header-bar>
   <ion-content scroll="true">
-    <div class="list card" ng-repeat="item in process">
-      <ion-item  class="item item-hmhlight item-text-centre">{{item.process}}</ion-item>
+    <div class="item item-hmhvibrant item-input issue-search">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Search Process Descriptions" ng-model="searchDesc">
+            <button ng-if="searchDesc.length" class="icon button-icon ion-ios-close-outline" ng-click="$parent.searchDesc=''">
+            </button>
+      </div>
+
+    <div class="list card" ng-repeat="item in process | filter:searchDesc">
+      <ion-item class="item item-hmhlight item-text-centre">{{item.process}}</ion-item>
       <ion-item class="item item-hmhblue item-body">{{item.description}}</ion-item>    
       <ion-item class="item-divider item-hmhgrey item-body">Important Notes</ion-item>    
       <ion-item class="item item-hmhblue item-body">{{item.notes}}</ion-item>    
