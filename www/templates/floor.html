@@ -13,7 +13,7 @@
     <ion-content class="floor">
         <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
             <ion-slide ng-repeat="image in floorImageArray" active="true" scrollbar-y="false" ng-init="num=$index+2">
-                <ion-item class="floor_title item-text-centre">HMH Dublin - Floor {{num}}</ion-item>
+                <h4 class="floor_title item-text-centre">HMH Dublin - Floor {{num}}</h4>
                 <img ng-src="{{image}}" on-error-src="./img/floor2.svg" type="image/svg+xml" class="floor-image" /> 
             </ion-slide>
         </ion-slide-box>

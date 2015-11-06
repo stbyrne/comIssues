@@ -178,7 +178,7 @@ angular.module('starter.controllers', [])
                 var issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
-                    component = value["gsx$component"].$t,
+                    description = value["gsx$description"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
@@ -203,7 +203,7 @@ angular.module('starter.controllers', [])
             
                 console.log(imageArray);
             
-                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, component:component, jira:jira, process:process, text:text});
+                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, description:description, jira:jira, process:process, text:text});
                     
             }, $scope.thinkcentral);
         
@@ -234,7 +234,7 @@ angular.module('starter.controllers', [])
                 var issue = value["gsx$issue"].$t,
                     index = value["gsx$index"].$t,
                     cause = value["gsx$cause"].$t,
-                    component = value["gsx$component"].$t,
+                    description = value["gsx$description"].$t,
                     jira = value["gsx$jira"].$t,
                     process = value["gsx$process"].$t,
                     thumb = imagePath + index + '/' + value["gsx$thumb"].$t,
@@ -253,7 +253,7 @@ angular.module('starter.controllers', [])
             
                 console.log(imageArray);
             
-                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, component:component, jira:jira, process:process, text:text});
+                this.push({index:index, imageDir:imageDir, imageArray:imageArray, thumb:thumb,issue:issue, cause:cause, description:description, jira:jira, process:process, text:text});
             }, $scope.hmof);
         
             console.log($scope.hmof);
