@@ -20,9 +20,9 @@
         <div ng-repeat="issues in hmof | filter:searchIssues">
         
             <ion-item  ng-if="issues.issue" class="item-divider item-hmhlight icon item-icon-left">
-                <i class="icon ion-ios-cog-outline"></i>{{issues.issue}}</ion-item>
+                <i class="icon ion-ios-pie-outline"></i>{{issues.issue}}</ion-item>
             <ion-item href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-icon-left item-icon-right">
-                <i class="icon ion-ios-pie-outline"></i>
+                <i class="icon ion-ios-cog-outline"></i>
                 <h2>{{issues.process}}</h2>
                 <p>{{issues.cause}}</p>
                 <i class="icon ion-ios-arrow-thin-right"></i>

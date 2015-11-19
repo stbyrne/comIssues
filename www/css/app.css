@@ -9258,6 +9258,9 @@ p.item-hmhblue {
 .issue-detail .list .item p {
   margin-top: 0; }
 
+.item-content p {
+  white-space: pre; }
+
 .popover {
   background-color: rgba(255, 255, 255, 0.9);
   border: none;

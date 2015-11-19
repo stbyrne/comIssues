@@ -471,7 +471,7 @@ angular.module('starter.controllers', [])
       $scope.$on('teamPopover.removed', function() {
         // Execute action
       });
-
+    
 })
 
 .controller('LoginsCtrl', ['$scope', '$http', '$timeout', '$ionicLoading', 'regularLogins', function($scope, $http, $timeout, $ionicLoading, regularLogins) {
