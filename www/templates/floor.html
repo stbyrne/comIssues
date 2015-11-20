@@ -1,5 +1,6 @@
 <ion-view>
     <ion-nav-bar class="bar-light">
+        <ion-nav-title ng-init="header = getItem().issue" class="title">Dublin Office</ion-nav-title>
         <ion-nav-buttons>
             <div class="buttons">
                 <a href="#/app/contact" class="button icon button-icon ion-ios-arrow-back"></a>
@@ -13,7 +14,7 @@
     <ion-content class="floor">
         <ion-slide-box show-pager="true" on-slide-changed="nextSlide()">
             <ion-slide ng-repeat="image in floorImageArray" active="true" scrollbar-y="false" ng-init="num=$index+2">
-                <h4 class="floor_title item-text-centre">HMH Dublin - Floor {{num}}</h4>
+                <span class="floor_title">Floor {{num}}</span>
                 <img ng-src="{{image}}" on-error-src="./img/floor2.svg" type="image/svg+xml" class="floor-image" /> 
             </ion-slide>
         </ion-slide-box>

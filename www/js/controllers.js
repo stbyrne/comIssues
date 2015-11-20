@@ -355,7 +355,7 @@ angular.module('starter.controllers', [])
     $scope.closeDesc = function() {
       $timeout(function(){
           $scope.modalDesc.hide();
-        }, 500);
+        }, 200);
     };
 
     // Open the Description modal
