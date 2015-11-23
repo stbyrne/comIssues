@@ -9360,6 +9360,9 @@ button.icon.button-icon.ion-ios7-close-outline {
 .item-button-right > .button, .item-button-right > .button.desc-icon {
   font-size: 34px; }
 
+.item-button-right > .button-home {
+  top: 8px; }
+
 /*
 .selectable{
     -moz-user-select: text !important;
