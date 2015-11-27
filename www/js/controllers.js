@@ -188,6 +188,13 @@ angular.module('starter.controllers', [])
                     imageDir = imagePath + index + '/',
                     imageArray = [],
                     text = value["gsx$text"].$t;
+                
+                // Set issue description of previous entry if none available
+                if(issue==""){
+                    var num = parseInt(index)-2;
+                    issue=this[num].issue;
+                    console.log(issue);
+                }
 
 
                 for (i = 1; i < 6; i++) {
@@ -254,10 +261,12 @@ angular.module('starter.controllers', [])
                     imageArray = [],
                     text = value["gsx$text"].$t;
 
-                /*if (issue == "") {
-                    var num = (parseInt(index) - 2);
+                // Set issue description of previous entry if none available
+                if(issue==""){
+                    var num = parseInt(index)-2;
                     issue=this[num].issue;
-                }*/
+                    console.log(issue);
+                }
 
                 /*Loop thru images in directory*/
 
@@ -300,9 +309,7 @@ angular.module('starter.controllers', [])
         // 
 
         $scope.setItem = function (item) {
-
-            console.log(item);
-
+                        
             $scope.$parent.item = item;
             $scope.$parent.imageArray = item.imageArray;
 

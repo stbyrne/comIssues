@@ -18,10 +18,13 @@
                 <button ng-if="searchIssues.length" class="icon button-icon ion-ios-close-outline" ng-click="$parent.searchIssues=''">
                 </button>
             </div>
-            <div ng-repeat="issues in thinkcentral | filter:searchIssues">
+            
+            <!--Pay attention to the arguement in ng-repeat where if the issue description is the same as the previus then it is still under the same item divider-->
+            <div ng-repeat="issues in thinkcentral | filter:searchIssues" ng-init="num=$index">
 
-                <ion-item ng-if="issues.issue" ng-init="setIssue(issues.issue)" class="item-divider item-hmhlight icon item-icon-left">
-                    <i class="icon ion-ios-pie-outline"></i>{{issues.issue}}</ion-item>
+                <ion-item ng-if="thinkcentral[num].issue!=thinkcentral[num-1].issue" class="item-divider item-hmhlight icon item-icon-left">
+                    <i class="icon ion-ios-pie-outline"></i>{{issues.issue}}
+                </ion-item>
                 <ion-item href="#/app/issues/{{issue.issue}}" ng-click="setItem(issues)" class="item item-icon-left item-icon-right">
                     <i class="icon ion-ios-cog-outline"></i>
                     <h2>{{issues.process}}</h2>
