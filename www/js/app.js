@@ -20,7 +20,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives',
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+/*.config(['$compileProvider',
+function ($compileProvider) {
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|skype|data|chrome-extension):/);
+}])*/
+
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $compileProvider) {
+    
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|local|skype):/);
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);
     
   $ionicConfigProvider.backButton.previousTitleText(false).text('');
     
